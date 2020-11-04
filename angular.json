@@ -28,13 +28,11 @@
               "src/assets"
             ],
             "styles": [
-              "src/node\\_modules/@clr/ui/clr-ui.min.css",
-              "src/node\\_modules/@clr/icons/clr-icons.min.css",
+              "node_modules/@clr/ui/clr-ui.min.css",
               "src/styles.css"
             ],
             "scripts": [
-              "src/node_modules/@webcomponents/custom-elements/custom-elements.min.js",
-              "src/node_modules/@clr/icons/clr-icons.min.js"
+              
             ]
           },
           "configurations": {
@@ -96,14 +94,11 @@
               "src/assets"
             ],
             "styles": [
-
-              "src/node\\_modules/@clr/ui/clr-ui.min.css",
-              "src/node\\_modules/@clr/icons/clr-icons.min.css",
+			  "node_modules/@clr/ui/clr-ui.min.css",
               "src/styles.css"
             ],
             "scripts": [
-              "src/node_modules/@webcomponents/custom-elements/custom-elements.min.js",
-              "src/node_modules/@clr/icons/clr-icons.min.js"
+             
             ]
           }
         },
