@@ -11,7 +11,7 @@ import {ClarityModule} from '@clr/angular';
   ],
   imports: [
     BrowserModule,
-    //AppRoutingModule
+    AppRoutingModule
 	ClarityModule
   ],
   providers: [],
