@@ -312,14 +312,16 @@
       </clr-alert>
 	  <section class="nav-group">
                     <clr-datagrid>
-						<clr-dg-column>Id</clr-dg-column>
+						
 						<clr-dg-column>email subject</clr-dg-column>
 						<clr-dg-column>email sender</clr-dg-column>
+						<clr-dg-column>created at</clr-dg-column>
 						
 						<clr-dg-row *ngFor="let email of emails">
-							<clr-dg-cell>{{email.id}}</clr-dg-cell>
+							
 							<clr-dg-cell>{{email.email_subject}}</clr-dg-cell>
 							<clr-dg-cell>{{email.email_sender}}</clr-dg-cell>
+							<clr-dg-cell>{{email.created_at}}</clr-dg-cell>
 						</clr-dg-row>
 
 						<clr-dg-footer>{{emails.length}} emails</clr-dg-footer>

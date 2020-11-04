@@ -7,6 +7,7 @@ export interface Email {
 	fk_user: number
 	email_sender: string
 	email_subject: string
+	created_at: string
 }
 
 @Injectable({
