@@ -18,7 +18,7 @@ export class EmailService {
   constructor(private http: HttpClient) { }
   
   getAllEmails(): Observable<Email[]> {
-    return this.http.get<Email[]>('http://a10dc2bd2b94.ngrok.io/api/emails')
+    return this.http.get<Email[]>('http://846d18b53696.ngrok.io/api/emails')
   }
   
   
