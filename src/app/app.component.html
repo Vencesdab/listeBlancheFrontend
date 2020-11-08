@@ -7,60 +7,43 @@
 <!-- * * * * * * * to get started with your project! * * * * * * * * -->
 <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
 
-<head>
-<base href="/">
-</head>
 <clr-main-container>
-	<clr-header class="header-6 header">
-		<div class="branding"><h1><font color="#ffffff">Liste blanche &nbsp; </font></h1></div>
-       
-	   <div class="header-nav">
-			<a href="/" class="active nav-link">
-				<span class="nav-text">Dashboard</span>
-			</a>
-			<a routerlink="/home" routerlinklinkactive="active" class="nav-link" href="/home">
-				<span class="nav-text">Profil</span>
-			</a>
-		</div>
+	<div class="app">
+		<clr-header class="header-6 header">
+			<div class="branding"><h1><font color="#ffffff">{{title}} </font></h1></div>
 		
-		<div class="header-actions">
-			<a href="profil.html" class="nav-link nav-text">Profil</a>
+			<div class="header-nav">
+				<a routerlink="/home" class="nav-link" href="/home">
+					<span class="nav-text">Home</span>
+				</a>
 				
-		</div>
-    </clr-header>
-  <div class="content-container">
-    <main class="content-area">
-      <clr-alert>
-        <div clr-alert-item class="alert-item">
-          <span class="alert-text">
-            Voici les mails en quarantaine :
-          </span>
-        </div>
-      </clr-alert>
-	  <!--<nav class="subnav"> -->
-	  <section class="nav-group"> 
-                    <clr-datagrid>
-						
-						<clr-dg-column>email subject</clr-dg-column>
-						<clr-dg-column>email sender</clr-dg-column>
-						<clr-dg-column>created at</clr-dg-column>
-						
-						<clr-dg-row *ngFor="let email of emails">
-							
-							<clr-dg-cell>{{email.email_subject}}</clr-dg-cell>
-							<clr-dg-cell>{{email.email_sender}}</clr-dg-cell>
-							<clr-dg-cell>{{email.created_at}}</clr-dg-cell>
-						</clr-dg-row>
-
-						<clr-dg-footer>{{emails.length}} emails</clr-dg-footer>
-
-					</clr-datagrid>
-		</section>
-		<!--</nav>  -->
-	</main>  
+				<a routerlink="/mail" class="nav-link" href="/mail">
+					<span class="nav-text">Mails</span>
+				</a>
+			</div>
+			<div class="header-actions">
+				<a routerlink="/profil" class="nav-link" href="/profil" >
+					<span class="nav-text">Profil</span>
+				</a>
+			</div>
+			
+			
+		</clr-header>
 		
-  </div>
+
+	</div>
+	<div class="content-container">
+		
+		<main class="content-area">
+			
+			<router-outlet></router-outlet>
+ 
+		</main>
+		
+		
+	</div>
 </clr-main-container>
+
 
 <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
 <!-- * * * * * * * * * * * The content above * * * * * * * * * * * -->
