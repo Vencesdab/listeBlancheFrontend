@@ -5,11 +5,19 @@ import { HttpClientModule } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+
 import {ClarityModule} from '@clr/angular';
+import { HomeComponent } from './modules/general/home/home.component';
+import { ProfilComponent } from './modules/general/profil/profil.component';
+import { MailComponent } from './modules/general/mail/mail.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    HomeComponent,
+    ProfilComponent,
+    MailComponent,
+	
   ],
   imports: [
     BrowserModule,

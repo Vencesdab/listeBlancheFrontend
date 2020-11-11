@@ -9,9 +9,9 @@ import { EmailService } from './email.service';
 })
 export class AppComponent implements OnInit {
   title = 'listeBlancheFrontend';
-  emails = [];
   
-  constructor(private emailService: EmailService) { }
   
-  ngOnInit(){this.emailService.getAllEmails().subscribe(data => {this.emails = data}, error => {this.emails = []});}
+  constructor() { }
+  
+  ngOnInit() : void {}
 }
