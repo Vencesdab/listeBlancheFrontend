@@ -10,6 +10,7 @@ import {ClarityModule} from '@clr/angular';
 import { HomeComponent } from './modules/general/home/home.component';
 import { ProfilComponent } from './modules/general/profil/profil.component';
 import { MailComponent } from './modules/general/mail/mail.component';
+import { SingleMailComponent } from './modules/general/single-mail/single-mail.component';
 
 @NgModule({
   declarations: [
@@ -17,6 +18,7 @@ import { MailComponent } from './modules/general/mail/mail.component';
     HomeComponent,
     ProfilComponent,
     MailComponent,
+    SingleMailComponent,
 	
   ],
   imports: [
