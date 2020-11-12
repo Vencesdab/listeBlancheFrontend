@@ -18,7 +18,11 @@ export class EmailService {
   constructor(private http: HttpClient) { }
   
   getAllEmails(): Observable<Email[]> {
+<<<<<<< Updated upstream
     return this.http.get<Email[]>('http://localhost:8000/api/emails')
+=======
+    return this.http.get<Email[]>('http://23d807666b40.ngrok.io/api/emails')
+>>>>>>> Stashed changes
   }
   
   
