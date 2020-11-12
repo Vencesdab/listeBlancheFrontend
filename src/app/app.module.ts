@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { HttpClientModule } from '@angular/common/http';
 
+
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
@@ -11,6 +12,7 @@ import { HomeComponent } from './modules/general/home/home.component';
 import { ProfilComponent } from './modules/general/profil/profil.component';
 import { MailComponent } from './modules/general/mail/mail.component';
 import { SingleMailComponent } from './modules/general/single-mail/single-mail.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -24,8 +26,10 @@ import { SingleMailComponent } from './modules/general/single-mail/single-mail.c
   imports: [
     BrowserModule,
     AppRoutingModule,
-	ClarityModule,
-	HttpClientModule
+    ClarityModule,
+    HttpClientModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

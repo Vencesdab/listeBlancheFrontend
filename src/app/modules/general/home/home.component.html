@@ -2,6 +2,24 @@
 	<div class="app">
 		
 		<p>home works!</p>
+		<h3>Login</h3>
+		<form [formGroup]="checkoutForm" (ngSubmit)="onSubmit(checkoutForm.value)">
+			<div>
+				<label for="email">
+				Email address
+				</label>
+				<input id="email" type="text" formControlName="email">
+			</div>
+			
+			<div>
+				<label for="password">
+				Password
+				</label>
+				<input id="password" type="text" formControlName="password">
+			</div>
+
+			<button class="button" type="submit">Login</button>
+		</form>
 	</div>
 	
 </clr-main-container>
