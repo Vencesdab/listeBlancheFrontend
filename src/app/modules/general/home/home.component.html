@@ -12,11 +12,21 @@
 				<input id="email" type="text" formControlName="email">
 			</div>
 			
-			<!--<form clrForm>
-				<clr-password-container>
+			<!--<div class="login-group">
+		<form clrform [formGroup]="checkoutForm" (ngSubmit)="onSubmit(checkoutForm.value)">
+			
+			<clr-input-container>
+               	<label class="clr-sr-only">Email address</label>
+     			<input type="text" name="email" clrInput placeholder="Email" />
+            </clr-input-container>
+			
+			
+			<clr-password-container>
 				<label for="password">Password</label>
-				<input clrPassword id="password" type="text" placeholder="Password please!" name="password" formControlName="password" [(ngModel)]="exampleTwo" />
-				</clr-password-container>
+				<input clrPassword id="password" type="text" placeholder="Password please!" name="password" formControlName="password"  />
+			</clr-password-container>
+			
+			<button class="button" type="submit">Login</button>
 			</form>-->
 			
 			<div>
