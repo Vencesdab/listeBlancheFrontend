@@ -3,6 +3,7 @@
 		
 		<p>home works!</p>
 		<h3>Login</h3>
+		
 		<form [formGroup]="checkoutForm" (ngSubmit)="onSubmit(checkoutForm.value)">
 			<div>
 				<label for="email">
@@ -10,6 +11,13 @@
 				</label>
 				<input id="email" type="text" formControlName="email">
 			</div>
+			
+			<!--<form clrForm>
+				<clr-password-container>
+				<label>Password</label>
+				<input clrPassword placeholder="Password please!" name="password" [(ngModel)]="exampleTwo" />
+				</clr-password-container>
+			</form>-->
 			
 			<div>
 				<label for="password">
