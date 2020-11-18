@@ -3,9 +3,9 @@ import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 
 export interface Profil {
-	nom : string
+	full_name : string
 	//mdp : string
-	mail : string
+	email : string
 }
 	
 

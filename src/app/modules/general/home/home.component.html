@@ -1,9 +1,9 @@
 <clr-main-container>
 	<div class="app">
+	
 		
 		<p>home works!</p>
 		<h3>Login</h3>
-		
 		<form [formGroup]="checkoutForm" (ngSubmit)="onSubmit(checkoutForm.value)">
 			<div>
 				<label for="email">
@@ -14,8 +14,8 @@
 			
 			<!--<form clrForm>
 				<clr-password-container>
-				<label>Password</label>
-				<input clrPassword placeholder="Password please!" name="password" [(ngModel)]="exampleTwo" />
+				<label for="password">Password</label>
+				<input clrPassword id="password" type="text" placeholder="Password please!" name="password" formControlName="password" [(ngModel)]="exampleTwo" />
 				</clr-password-container>
 			</form>-->
 			
@@ -28,7 +28,9 @@
 
 			<button class="button" type="submit">Login</button>
 		</form>
+		
 	</div>
+		
 	
 </clr-main-container>
 
