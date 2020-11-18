@@ -4,7 +4,7 @@ import { Observable } from 'rxjs';
 
 export interface Profil {
 	nom : string
-	mdp : string
+	//mdp : string
 	mail : string
 }
 	
@@ -17,8 +17,8 @@ export class ProfilService {
   constructor(private http: HttpClient) { }
   
   getInfos(): Observable<Profil> {
-		return this.http.get<Profil>('http://localhost:8000/api/emails')
-		//return this.http.get<Email[]>('http://23d807666b40.ngrok.io/api/emails')
+		//return this.http.get<Profil>('http://localhost:8000/api/emails')
+		return this.http.get<Profil>('http://543179125d8c.ngrok.io/api/user')
   
 	}
 }
