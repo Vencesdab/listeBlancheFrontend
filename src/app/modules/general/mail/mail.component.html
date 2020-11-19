@@ -3,12 +3,12 @@
 		
 	<div class="app">
 	  
-	    <section class="nav-group"> 
+	    
                     <clr-datagrid [(clrDgSingleSelected)]="selectedEmail" >
 						
 						<clr-dg-column [clrDgField]="'email_subject'">email subject</clr-dg-column>
 						<clr-dg-column [clrDgField]="'email_sender'">email sender</clr-dg-column>
-						<clr-dg-column>created at</clr-dg-column>
+						<clr-dg-column [clrDgField]="'created_at'">created at</clr-dg-column>
 						
 						<clr-dg-row *clrDgItems="let email of emails" [clrDgItem]="email">
 						
@@ -22,22 +22,19 @@
 						<clr-dg-footer>{{emails.length}} emails</clr-dg-footer>
 
 					</clr-datagrid>
-					Selected email: <span class="emailsubject" *ngIf="selectedEmail">{{selectedEmail.email_subject}} </span>
+					Selected email: <span class="emailsubject" *ngIf="selectedEmail">{{selectedEmail.email_subject}}</span>
 					
-		</section>
-		<section>
-		<button class="btn btn-outline" [disabled]="!isSelected" (click)="onGoToMail()">
+		
+		
+	</div>
+	<div>
+			<button class="btn btn-outline" [disabled]="!selectedEmail" (click)="onGoToMail()">
 			<!--<a routerlink="/single-mail" class="nav-link" href="/single-mail">-->
 					<span class="nav-text">Go to mail</span>
 			<!--</a>-->
-		</button>
-		</section>
-	
-		
-			
+			</button>
 	</div>
-		
-	 
+
 		
   
   

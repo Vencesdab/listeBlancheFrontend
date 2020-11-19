@@ -1,6 +1,16 @@
 import { Component, OnInit } from '@angular/core';
 import {ActivatedRoute} from '@angular/router';
 import { EmailService } from '../../../email.service';
+import { MailComponent } from '../mail/mail.component';
+
+export interface Email {
+	id: number
+	fk_user: number
+	email_sender: string
+	email_subject: string
+	created_at: string
+}
+
 
 @Component({
   selector: 'app-single-mail',
@@ -9,13 +19,12 @@ import { EmailService } from '../../../email.service';
 })
 export class SingleMailComponent implements OnInit {
 	name:string = 'Email';
-	email = [];
+	email:Email ;
 
   constructor(private emailService: EmailService, private route: ActivatedRoute) { }
 
   ngOnInit()  {
-	  this.emailService.getAllEmails().subscribe(data => {this.email = data}, error => {this.email = []});
-	  this.name = this.route.snapshot.params['id'];
+    this.email = {id:1, fk_user:2, email_sender:"a@or.fr", email_subject:"test", created_at:"10"}
 }
 		
 }
