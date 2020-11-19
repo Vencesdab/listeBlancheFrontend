@@ -9,13 +9,14 @@ import {Router} from '@angular/router';
 })
 export class MailComponent implements OnInit {
 	emails = [];
-	selectedEmail = [];
+  selectedEmail = [];
+  isSelected = false;
 
   constructor(private emailService: EmailService, private router: Router) { }
 
   ngOnInit(){this.emailService.getAllEmails().subscribe(data => {this.emails = data}, error => {this.emails = []});}
   
-  goToMail(){
+  onGoToMail(){
 	  this.router.navigate(['single-mail']);
   }
 

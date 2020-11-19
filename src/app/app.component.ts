@@ -9,7 +9,7 @@ import { ProfilService } from './profil.service';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent implements OnInit {
-  title = 'listeBlancheFrontend';
+  title = 'Projet liste ';
   
   
   constructor() { }

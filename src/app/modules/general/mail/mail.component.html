@@ -26,10 +26,10 @@
 					
 		</section>
 		<section>
-		<button class="btn" >
-			<a routerlink="/single-mail" class="nav-link" href="/single-mail">
+		<button class="btn btn-outline" [disabled]="!isSelected" (click)="onGoToMail()">
+			<!--<a routerlink="/single-mail" class="nav-link" href="/single-mail">-->
 					<span class="nav-text">Go to mail</span>
-			</a>
+			<!--</a>-->
 		</button>
 		</section>
 	
