@@ -14,6 +14,7 @@ export interface Email {
   providedIn: 'root'
 })
 export class EmailService {
+  email:Email;
 
   constructor(private http: HttpClient) { }
   

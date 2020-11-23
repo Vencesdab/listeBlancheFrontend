@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { EmailService } from './email.service';
+import { Email, EmailService } from './email.service';
 import { ProfilService } from './profil.service';
  
 
@@ -10,9 +10,14 @@ import { ProfilService } from './profil.service';
 })
 export class AppComponent implements OnInit {
   title = 'Projet liste ';
+
+  email:Email;
   
   
-  constructor() { }
   
-  ngOnInit() : void {}
+  constructor(private emailService: EmailService) { }
+  
+  ngOnInit() : void {
+    //this.email=this.emailService.email;
+  }
 }

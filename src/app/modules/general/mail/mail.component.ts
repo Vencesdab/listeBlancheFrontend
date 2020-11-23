@@ -1,6 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { EmailService } from '../../../email.service';
 import {Router} from '@angular/router';
+import { SingleMailComponent } from '../single-mail/single-mail.component';
 
 export interface Email {
 	id: number
@@ -19,6 +20,7 @@ export class MailComponent implements OnInit {
 	emails = [];
   selectedEmail:Email[] ;
   isSelected = true;
+  email:Email;
 
   constructor(private emailService: EmailService, private router: Router) { }
 
@@ -27,13 +29,13 @@ export class MailComponent implements OnInit {
     {fk_user:2, email_sender:"a@or.fr", email_subject:"test", created_at:"10"}, 
     {fk_user:1, email_sender:"a@or.fr", email_subject:"test2", created_at:"11"}
     ];
-  //this.selectedEmail=[]
+  //this.selectedEmail=
 }
   
   
   onGoToMail(){
     this.router.navigate(['single-mail']);
-    
+    this.email = this.selectedEmail[0];
   }
 
   /**select(){

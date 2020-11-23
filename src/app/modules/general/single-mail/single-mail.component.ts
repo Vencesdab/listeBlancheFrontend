@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import {ActivatedRoute} from '@angular/router';
 import { EmailService } from '../../../email.service';
 import { MailComponent } from '../mail/mail.component';
@@ -19,12 +19,13 @@ export interface Email {
 })
 export class SingleMailComponent implements OnInit {
 	name:string = 'Email';
-	email:Email ;
+	@Input() emails:Email[] ;
+	email:Email;
 
   constructor(private emailService: EmailService, private route: ActivatedRoute) { }
 
   ngOnInit()  {
-    this.email = {id:1, fk_user:2, email_sender:"a@or.fr", email_subject:"test", created_at:"10"}
+    this.email = this.emails[0];//{id:1, fk_user:2, email_sender:"a@or.fr", email_subject:"test", created_at:"10"}
 }
 		
 }
