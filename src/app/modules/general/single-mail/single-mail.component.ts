@@ -1,5 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import {ActivatedRoute} from '@angular/router';
+import { AppComponent } from 'src/app/app.component';
 import { EmailService } from '../../../email.service';
 import { MailComponent } from '../mail/mail.component';
 
@@ -25,7 +26,9 @@ export class SingleMailComponent implements OnInit {
   constructor(private emailService: EmailService, private route: ActivatedRoute) { }
 
   ngOnInit()  {
-    this.email = this.emails[0];//{id:1, fk_user:2, email_sender:"a@or.fr", email_subject:"test", created_at:"10"}
+	//this.email = this.emails[0]//this.emails[0];//{id:1, fk_user:2, email_sender:"a@or.fr", email_subject:"test", created_at:"10"}
+	this.email=this.emailService.email
+	this.emails=this.emailService.emails
 }
 		
 }

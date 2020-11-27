@@ -18,7 +18,7 @@ export class ProfilService {
   
   getInfos(): Observable<Profil> {
 		//return this.http.get<Profil>('http://localhost:8000/api/emails')
-		return this.http.get<Profil>('http://37159655a54c.ngrok.io/api/user', {withCredentials: true})
+		return this.http.get<Profil>('http://9133b0933460.ngrok.io/api/user')
   
 	}
 }

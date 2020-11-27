@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Email, EmailService } from './email.service';
+import { MailComponent } from './modules/general/mail/mail.component';
+import { SingleMailComponent } from './modules/general/single-mail/single-mail.component';
 import { ProfilService } from './profil.service';
  
 
@@ -18,6 +20,6 @@ export class AppComponent implements OnInit {
   constructor(private emailService: EmailService) { }
   
   ngOnInit() : void {
-    //this.email=this.emailService.email;
+    
   }
 }
