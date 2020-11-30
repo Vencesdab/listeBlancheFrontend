@@ -14,6 +14,7 @@ import { MailComponent } from './modules/general/mail/mail.component';
 import { SingleMailComponent } from './modules/general/single-mail/single-mail.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { LoginComponent } from './login/login.component';
+import { url } from './config.json';
 
 @NgModule({
   declarations: [

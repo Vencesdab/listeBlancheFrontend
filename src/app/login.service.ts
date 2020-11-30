@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { url } from './config.json';
+import url  from './config.json';
 
 export interface cookieSetter {
   setCookie: boolean

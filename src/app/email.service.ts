@@ -1,7 +1,7 @@
 import { Injectable, Input } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { url } from './config.json';
+import url  from './config.json';
 
 export interface Email {
 	id: number
