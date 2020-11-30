@@ -5,9 +5,14 @@
 		<p>Bonjour, {{profil.full_name}} !</p>
 		<!--<p>mdp : {{profil.mdp}}</p>-->
 		<p>Bienvenue sur le compte de votre adresse mail {{profil.email}}</p>
-		
-		
 
+	</div>
+
+	<div>
+		<button class="btn btn-outline" (click)="onGoToLogin()" >
+			<span class="nav-text">Se déconnecter</span>
+		</button>
+		
 	</div>
 	
 </clr-main-container>

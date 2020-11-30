@@ -17,5 +17,10 @@ export class HomeComponent implements OnInit {
   ngOnInit(){this.profilService.getInfos().subscribe(data => {this.profil = data}, error => {this.profil = []});
   }
 
+  onGoToLogin(){
+    this.router.navigate(['login'])
+    
+    
+  }
 }
 
