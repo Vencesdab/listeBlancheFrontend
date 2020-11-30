@@ -21,7 +21,7 @@ export class EmailService {
   
   getAllEmails(): Observable<Email[]> {
   //return this.http.get<Email[]>('http://localhost:8000/api/emails',{withCredentials: true})
-  return this.http.get<Email[]>('http://9133b0933460.ngrok.io/api/emails')
+  return this.http.get<Email[]>('http://ca8304e88287.ngrok.io/api/emails')
   }
 
 
