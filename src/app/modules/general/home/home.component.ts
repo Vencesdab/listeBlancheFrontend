@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder } from '@angular/forms';
+
 import { Router } from '@angular/router';
-import { LoginService } from 'src/app/login.service';
+import { ProfilService } from 'src/app/profil.service';
 
 @Component({
   selector: 'app-home',
@@ -10,24 +10,12 @@ import { LoginService } from 'src/app/login.service';
 })
 export class HomeComponent implements OnInit {
 
-  checkoutForm;
+	profil;
 
-  constructor(private loginService: LoginService ,private formBuilder: FormBuilder,  private router: Router) {
-    this.checkoutForm = this.formBuilder.group({
-      email: '',
-      password: ''
-    });
-  }
+  constructor(private profilService: ProfilService, private router: Router) { }
 
-  ngOnInit(): void {
-  }
-
-  onSubmit(data) {
-    this.checkoutForm.reset();
-    this.loginService.login(data).subscribe(res => {
-      if (res.setCookie) this.router.navigate(['mail']) 
-    })
-      
+  ngOnInit(){this.profilService.getInfos().subscribe(data => {this.profil = data}, error => {this.profil = []});
   }
 
 }
+
