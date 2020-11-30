@@ -13,6 +13,7 @@ import { ProfilComponent } from './modules/general/profil/profil.component';
 import { MailComponent } from './modules/general/mail/mail.component';
 import { SingleMailComponent } from './modules/general/single-mail/single-mail.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { LoginComponent } from './login/login.component';
 
 @NgModule({
   declarations: [
@@ -21,6 +22,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     ProfilComponent,
     MailComponent,
     SingleMailComponent,
+    LoginComponent,
 	
   ],
   imports: [
