@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { url } from './config.json';
 
 export interface cookieSetter {
   setCookie: boolean
@@ -16,6 +17,6 @@ export class LoginService {
   login(userdata) {
     const request = '{"email": "'+ userdata.email+'","password": "'+userdata.password+'"}';
     const headers = { 'content-type': 'application/json'}  
-    return this.http.post<cookieSetter>('http://ca8304e88287.ngrok.io/login',request,{'headers':headers});
+    return this.http.post<cookieSetter>(url+'login',request,{'headers':headers});
   }
 }

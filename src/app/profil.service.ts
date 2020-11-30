@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { url } from './config.json';
 
 export interface Profil {
 	full_name : string
@@ -18,7 +19,7 @@ export class ProfilService {
   
   getInfos(): Observable<Profil> {
 		//return this.http.get<Profil>('http://localhost:8000/api/emails')
-		return this.http.get<Profil>('http://ca8304e88287.ngrok.io/api/user')
+		return this.http.get<Profil>(url+'api/user')
   
 	}
 }
