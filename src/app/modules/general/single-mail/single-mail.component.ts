@@ -1,7 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import {ActivatedRoute} from '@angular/router';
-import { AppComponent } from 'src/app/app.component';
-import { EmailService } from '../../../email.service';
+import { EmailService } from './../../../services/email.service';
 import { MailComponent } from '../mail/mail.component';
 
 export interface Email {

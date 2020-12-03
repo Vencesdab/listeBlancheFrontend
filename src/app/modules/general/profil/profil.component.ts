@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ProfilService } from '../../../profil.service';
+import { ProfilService } from './../../../services/profil.service';
 import {Router} from '@angular/router';
 
 @Component({

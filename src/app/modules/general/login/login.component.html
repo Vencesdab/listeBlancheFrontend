@@ -1,1 +1,46 @@
-<p>login works!</p>
+
+	<div class="app">
+	
+		
+		
+		<h3>Login {{isauth}} </h3>
+		<form [formGroup]="checkoutForm" (ngSubmit)="onSubmit(checkoutForm.value)">
+			<div>
+				<label for="email">
+				Email address
+				</label>
+				<input id="email" type="text" formControlName="email">
+			</div>
+			
+			<!--<div class="login-group">
+					<form clrform [formGroup]="checkoutForm" (ngSubmit)="onSubmit(checkoutForm.value)">
+			
+				<clr-input-container>
+               		<label class="clr-sr-only">Email address</label>
+     				<input type="text" name="email" clrInput placeholder="Email" />
+            	</clr-input-container>
+			
+			
+				<clr-password-container>
+					<label for="password">Password</label>
+					<input clrPassword id="password" type="text" placeholder="Password please!" name="password" formControlName="password"  />
+				</clr-password-container>
+			
+				<button class="button" type="submit">Login</button>
+			</form>-->
+			
+			<div>
+				<label for="password">
+				Password
+				</label>
+				<input id="password" type="text" formControlName="password">
+			</div>
+
+			<button class="button" type="submit">Login</button>
+		</form>
+		
+	</div>
+	
+		
+	
+

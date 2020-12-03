@@ -1,7 +1,8 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { EmailService } from '../../../email.service';
+import { EmailService } from './../../../services/email.service';
 import {Router} from '@angular/router';
 import { SingleMailComponent } from '../single-mail/single-mail.component';
+import { HeaderComponent } from './../../../header/header.component';
 
 export interface Email {
 	id: number
@@ -16,14 +17,16 @@ export interface Email {
   templateUrl: './mail.component.html',
   styleUrls: ['./mail.component.css']
 })
-export class MailComponent implements OnInit {
+export class MailComponent extends HeaderComponent implements OnInit {
 	emails = [];
   selectedEmail:Email ;
   isSelected = true;
   email:Email;
   
 
-  constructor(private emailService: EmailService, private router: Router) { }
+  constructor(private emailService: EmailService, private router: Router) { 
+    super();
+  }
 
   ngOnInit(){this.emailService.getAllEmails().subscribe(data => {this.emails = data}, error => {this.emails = []});}
   //ngOnInit(){this.emails = [

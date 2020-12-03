@@ -1,7 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder } from '@angular/forms';
 import { Router } from '@angular/router';
-import { LoginService } from 'src/app/login.service';
+import { LoginService } from './../../../services/login.service';
+import { HeaderComponent } from './../../../header/header.component';
+import { EmailService } from './../../../services/email.service';
+import { BaseComponentComponent } from './../../../base-component/base-component.component';
 
 @Component({
   selector: 'app-home',
@@ -9,25 +12,19 @@ import { LoginService } from 'src/app/login.service';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
+  
 
-  checkoutForm;
+  
 
-  constructor(private loginService: LoginService ,private formBuilder: FormBuilder,  private router: Router) {
-    this.checkoutForm = this.formBuilder.group({
-      email: '',
-      password: ''
-    });
+  constructor(private emailService:EmailService, public router: Router) {
+    
+    
   }
+  
 
   ngOnInit(): void {
   }
 
-  onSubmit(data) {
-    this.checkoutForm.reset();
-    this.loginService.login(data).subscribe(res => {
-      if (res.setCookie) this.router.navigate(['mail']) 
-    })
-      
-  }
+  
 
 }

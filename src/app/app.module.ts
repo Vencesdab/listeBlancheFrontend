@@ -13,8 +13,10 @@ import { ProfilComponent } from './modules/general/profil/profil.component';
 import { MailComponent } from './modules/general/mail/mail.component';
 import { SingleMailComponent } from './modules/general/single-mail/single-mail.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { LoginComponent } from './login/login.component';
+import { LoginComponent } from './modules/general/login/login.component';
 import { url } from './config.json';
+import { HeaderComponent } from './header/header.component';
+import { BaseComponentComponent } from './base-component/base-component.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +26,8 @@ import { url } from './config.json';
     MailComponent,
     SingleMailComponent,
     LoginComponent,
-	
+    HeaderComponent,
+    BaseComponentComponent
   ],
   imports: [
     BrowserModule,

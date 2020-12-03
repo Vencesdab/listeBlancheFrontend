@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { Email, EmailService } from './email.service';
+import { Email, EmailService } from './services/email.service';
 import { MailComponent } from './modules/general/mail/mail.component';
 import { SingleMailComponent } from './modules/general/single-mail/single-mail.component';
-import { ProfilService } from './profil.service';
+import { ProfilService } from './services/profil.service';
  
 
 @Component({
@@ -12,7 +12,7 @@ import { ProfilService } from './profil.service';
 })
 export class AppComponent implements OnInit {
   title = 'Projet liste ';
-
+  
   email:Email;
   
   
