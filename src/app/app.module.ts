@@ -7,7 +7,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
-import {ClarityModule} from '@clr/angular';
+import { ClarityModule } from '@clr/angular';
 import { HomeComponent } from './modules/general/home/home.component';
 import { ProfilComponent } from './modules/general/profil/profil.component';
 import { MailComponent } from './modules/general/mail/mail.component';
@@ -16,6 +16,9 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { LoginComponent } from './modules/general/login/login.component';
 import { url } from './config.json';
 import { CreateAccountComponent } from './modules/general/create-account/create-account.component';
+import { CaptchaComponent } from './modules/general/captcha/captcha.component';
+import { RecaptchaModule, RecaptchaFormsModule } from 'ng-recaptcha';
+
 
 @NgModule({
   declarations: [
@@ -26,7 +29,8 @@ import { CreateAccountComponent } from './modules/general/create-account/create-
     SingleMailComponent,
     LoginComponent,
     CreateAccountComponent,
-	
+    CaptchaComponent,
+
   ],
   imports: [
     BrowserModule,
@@ -34,7 +38,9 @@ import { CreateAccountComponent } from './modules/general/create-account/create-
     ClarityModule,
     HttpClientModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    RecaptchaModule,
+    RecaptchaFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
