@@ -5,7 +5,7 @@ import { LoginService } from './../../../services/login.service';
 import { HeaderComponent } from './../../../header/header.component';
 import { EmailService } from './../../../services/email.service';
 import { BaseComponentComponent } from './../../../base-component/base-component.component';
-import { ProfilService } from 'src/app/profil.service';
+import { ProfilService } from './../../../services/profil.service';
 
 @Component({
   selector: 'app-home',

@@ -31,7 +31,7 @@ import { RecaptchaModule, RecaptchaFormsModule } from 'ng-recaptcha';
     SingleMailComponent,
     LoginComponent,
     HeaderComponent,
-    BaseComponentComponent
+    BaseComponentComponent,
     CreateAccountComponent,
     CaptchaComponent,
 
@@ -44,7 +44,7 @@ import { RecaptchaModule, RecaptchaFormsModule } from 'ng-recaptcha';
     FormsModule,
     ReactiveFormsModule,
     RecaptchaModule,
-    RecaptchaFormsModule
+    RecaptchaFormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
