@@ -21,7 +21,8 @@ export class LoginComponent implements OnInit {
   
   
 
-  constructor(private baseComponent:BaseComponentComponent, private emailService:EmailService, private loginService: LoginService ,private formBuilder: FormBuilder,  private router: Router) {
+  constructor(//private baseComponent:BaseComponentComponent, 
+    private emailService:EmailService, private loginService: LoginService ,private formBuilder: FormBuilder,  private router: Router) {
     this.checkoutForm = this.formBuilder.group({
       email: '',
       password: ''
@@ -35,7 +36,10 @@ export class LoginComponent implements OnInit {
   onSubmit(data) {
     this.checkoutForm.reset();
     this.loginService.login(data).subscribe(res => {
-      if (res.setCookie) this.router.navigate(['mail']) 
+      if (res.setCookie) {
+        //this.baseComponent.isauth = res.setCookie
+        this.router.navigate(['home']) 
+        }
     })
       
   }

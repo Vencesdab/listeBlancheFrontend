@@ -8,6 +8,7 @@ import { SingleMailComponent } from './modules/general/single-mail/single-mail.c
 import { LoginComponent } from './modules/general/login/login.component';
 import { CreateAccountComponent } from './modules/general/create-account/create-account.component';
 import { CaptchaComponent } from './modules/general/captcha/captcha.component';
+import { AppComponent } from './app.component';
 
 const routes: Routes = [
   { path: '', component: LoginComponent },
