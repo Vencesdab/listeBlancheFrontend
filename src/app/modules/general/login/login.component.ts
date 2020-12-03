@@ -7,6 +7,7 @@ import { EmailService } from './../../../services/email.service';
 import { BaseComponentComponent } from './../../../base-component/base-component.component';
 import { Input } from '@angular/core';
 
+
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -25,10 +26,7 @@ export class LoginComponent implements OnInit {
       email: '',
       password: ''
     });
-  
-    
   }
-  
 
   ngOnInit(): void {
     //this.isauth = false
@@ -36,14 +34,10 @@ export class LoginComponent implements OnInit {
 
   onSubmit(data) {
     this.checkoutForm.reset();
-
     this.loginService.login(data).subscribe(res => {
-      if (res.setCookie) {
-        this.isauth = res.setCookie
-        this.loginService.isauth = this.isauth
-        this.baseComponent.isauth = this.loginService.isauth
-        this.router.navigate(['']);}
+      if (res.setCookie) this.router.navigate(['mail']) 
     })
       
   }
+
 }

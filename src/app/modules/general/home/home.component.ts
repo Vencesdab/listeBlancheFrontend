@@ -1,10 +1,11 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder } from '@angular/forms';
+
 import { Router } from '@angular/router';
 import { LoginService } from './../../../services/login.service';
 import { HeaderComponent } from './../../../header/header.component';
 import { EmailService } from './../../../services/email.service';
 import { BaseComponentComponent } from './../../../base-component/base-component.component';
+import { ProfilService } from 'src/app/profil.service';
 
 @Component({
   selector: 'app-home',
@@ -14,17 +15,17 @@ import { BaseComponentComponent } from './../../../base-component/base-component
 export class HomeComponent implements OnInit {
   
 
-  
+	profil;
 
-  constructor(private emailService:EmailService, public router: Router) {
+  constructor(private profilService: ProfilService, private router: Router) { }
+
+  ngOnInit(){this.profilService.getInfos().subscribe(data => {this.profil = data}, error => {this.profil = []});
+  }
+
+  onGoToLogin(){
+    this.router.navigate(['login'])
     
     
   }
-  
-
-  ngOnInit(): void {
-  }
-
-  
-
 }
+
