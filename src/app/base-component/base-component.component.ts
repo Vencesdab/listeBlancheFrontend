@@ -16,7 +16,7 @@ export class BaseComponentComponent implements OnInit {
   
   
 
-  constructor(//private loginService:LoginService
+  constructor(private loginService:LoginService
     ) {
     //this.isauth = this.loginService.isauth
     
@@ -24,6 +24,11 @@ export class BaseComponentComponent implements OnInit {
 
   ngOnInit(): void {
     //this.isauth = this.loginService.isauth
+    this.isauth = this.loginService.isauth
+  }
+
+  connect(){
+    this.isauth = this.loginService.isauth
   }
 
 }

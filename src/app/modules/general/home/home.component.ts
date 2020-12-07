@@ -17,13 +17,15 @@ export class HomeComponent implements OnInit {
 
 	profil;
 
-  constructor(private profilService: ProfilService, private router: Router) { }
+  constructor(private baseComp:BaseComponentComponent, private profilService: ProfilService, private loginService:LoginService, private router: Router) { }
 
   ngOnInit(){this.profilService.getInfos().subscribe(data => {this.profil = data}, error => {this.profil = []});
   }
 
   onGoToLogin(){
-    this.router.navigate(['login'])
+    this.loginService.isauth = false
+    this.baseComp.connect()
+    this.router.navigate(['base'])
     
     
   }

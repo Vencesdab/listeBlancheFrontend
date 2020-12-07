@@ -9,16 +9,18 @@ import { LoginComponent } from './modules/general/login/login.component';
 import { CreateAccountComponent } from './modules/general/create-account/create-account.component';
 import { CaptchaComponent } from './modules/general/captcha/captcha.component';
 import { AppComponent } from './app.component';
+import { BaseComponentComponent } from './base-component/base-component.component';
 
 const routes: Routes = [
-  { path: '', component: LoginComponent },
+  { path: '', component: HomeComponent },
   { path: 'home', component: HomeComponent },
   { path: 'profil', component: ProfilComponent },
   { path: 'mail', component: MailComponent },
   { path: 'single-mail', component: SingleMailComponent },
   { path: 'login', component: LoginComponent },
   { path: 'create-account', component: CreateAccountComponent },
-  { path: 'verify/:id', component: CaptchaComponent }
+  { path: 'verify/:id', component: CaptchaComponent },
+  { path: 'base', component: BaseComponentComponent }
   ];
 
 @NgModule({

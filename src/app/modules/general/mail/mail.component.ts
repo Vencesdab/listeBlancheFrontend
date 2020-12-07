@@ -17,7 +17,7 @@ export interface Email {
   templateUrl: './mail.component.html',
   styleUrls: ['./mail.component.css']
 })
-export class MailComponent extends HeaderComponent implements OnInit {
+export class MailComponent implements OnInit {
 	emails = [];
   selectedEmail:Email ;
   isSelected = true;
@@ -25,7 +25,7 @@ export class MailComponent extends HeaderComponent implements OnInit {
   
 
   constructor(private emailService: EmailService, private router: Router) { 
-    super();
+    //super(router);
   }
 
   ngOnInit(){this.emailService.getAllEmails().subscribe(data => {this.emails = data}, error => {this.emails = []});}

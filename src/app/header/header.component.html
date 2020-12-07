@@ -3,16 +3,16 @@
 		<div class="branding"><h1><font color="#ffffff">{{title}} </font></h1></div>
 	
 		<div class="header-nav">
-			<a routerlink="/home" class="nav-link" href="/home">
+			<a class="btn" (click)=goHome()>
 				<span class="nav-text">Home</span>
 			</a>
 			
-			<a routerlink="/mail" class="nav-link" href="/mail">
+			<a class="btn" (click)=goMail()>
 				<span class="nav-text">Mails</span>
 			</a>
 		</div>
 		<div class="header-actions">
-			<a routerlink="/profil" class="nav-link" href="/profil" >
+			<a class="btn" (click)=goProfil() >
 				<span class="nav-text">Profil</span>
 			</a>
 		</div>

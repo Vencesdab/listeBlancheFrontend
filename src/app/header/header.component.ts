@@ -14,11 +14,25 @@ export class HeaderComponent implements OnInit {
   title = 'Projet liste ';
   
 
-  constructor(//private router: Router 
+  constructor(private router: Router 
     ) { }
 
   ngOnInit(): void {
     //this.router.navigate(['home'])
   }
+
+  goHome(){
+    this.router.navigate(['home'])
+  }
+
+  goMail(){
+    this.router.navigate(['mail'])
+  }
+
+  goProfil(){
+    this.router.navigate(['profil'])
+  }
+
+  
 
 }
