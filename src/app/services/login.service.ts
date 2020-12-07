@@ -28,17 +28,17 @@ export class LoginService implements OnInit{
 
   ngOnInit() : void {
     //const headers = { 'content-type': 'application/json'} 
-    this.http.get<IsConnected>(this.adresse2, {withCredentials: !config["proxy-dev"]}).subscribe(
-      isConnected => {
-        if (isConnected.connected){
-          this.isauth = isConnected.connected
-        } else {
-          this.isauth = false
-        } }, error => {alert('Pas connecté')});
+    //this.http.get<IsConnected>(this.adresse2, {withCredentials: !config["proxy-dev"]}).subscribe(
+      //isConnected => {
+        //if (isConnected.connected){
+          //this.isauth = isConnected.connected
+        //} else {
+          //this.isauth = false
+        //} }, error => {alert('Pas connecté')});
   }
 
   
-
+  //Fonction activée avec le bouton qui authentifie l'utilisateur avec la bdd
   login(userdata) {
     const request = '{"email": "'+ userdata.email+'","password": "'+userdata.password+'"}';
     const headers = { 'content-type': 'application/json'}  
@@ -47,7 +47,8 @@ export class LoginService implements OnInit{
     return this.http.post<cookieSetter>(this.adresse, request, {'headers':headers, withCredentials: !config["proxy-dev"]});
   }
 
-  estConnecte(){
+  //Fonction qui permet de voir si l'utilisateur est connecté
+  isConnected(){
       //const headers = { 'content-type': 'application/json'} 
       this.http.get<IsConnected>(this.adresse2, {withCredentials: !config["proxy-dev"]}).subscribe(
         isConnected => {this.isauth =  isConnected.connected}, error => {alert('Pas connecté')});

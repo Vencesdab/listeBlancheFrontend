@@ -23,10 +23,13 @@ export class BaseComponentComponent implements OnInit {
    }
 
   ngOnInit(): void {
-    //this.isauth = this.loginService.isauth
     this.isauth = this.loginService.isauth
   }
 
+  //Permet d'actualiser la donnée 'isauth' de baseComponent avec une action.
+  //Comme ça, dès qu'on revient au BaseComponent, il sait quelle page afficher : 
+  // - soit login (sans header), 
+  // - soit home (avec header) 
   connect(){
     this.isauth = this.loginService.isauth
   }

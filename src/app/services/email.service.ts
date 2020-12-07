@@ -21,7 +21,7 @@ export class EmailService {
   constructor(private http: HttpClient) { }
   
   getAllEmails(): Observable<Email[]> {
-  return this.http.get<Email[]>(config.url + "api/emails",{withCredentials: !config["proxy-dev"]})
+    return this.http.get<Email[]>(config.url + "api/emails",{withCredentials: !config["proxy-dev"]})
   }
 
 

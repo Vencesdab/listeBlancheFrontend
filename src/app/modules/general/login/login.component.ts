@@ -16,7 +16,7 @@ import { Input } from '@angular/core';
 export class LoginComponent implements OnInit {
 
   checkoutForm;
-  isauth: boolean ;
+  
   
   
   
@@ -27,21 +27,21 @@ export class LoginComponent implements OnInit {
       email: '',
       password: ''
     });
-    //this.isauth = false
+    
   }
 
   ngOnInit(): void {
-    this.isauth = this.loginService.estConnecte()
+    
   }
 
  
-
+  //Quand on clique sur le bouton 'se connecter' :
+  // - on regarde avec la bdd si le mdp et l'id sont valides
+  // - on actualise le baseComponeent en conséquence en fonction de la réponse grâce a la fonction connect()
   onSubmit(data) {
     this.checkoutForm.reset();
-    this.isauth = this.loginService.isauth
     this.loginService.login(data).subscribe(res => {
       if (res.setCookie) {
-        this.isauth = this.loginService.estConnecte()
         this.baseComponent.connect()
         this.router.navigate(['']) 
         }
