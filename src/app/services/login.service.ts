@@ -21,20 +21,10 @@ export class LoginService implements OnInit{
   
 
   constructor(private http: HttpClient) {
-      //const headers = { 'content-type': 'application/json'} 
-      //this.connected  = this.http.get(this.adresse2, {'headers':headers, withCredentials: !config["proxy-dev"]});
-      //this.isauth = this.connected.connected == true;
-     }
+    }
 
   ngOnInit() : void {
-    //const headers = { 'content-type': 'application/json'} 
-    //this.http.get<IsConnected>(this.adresse2, {withCredentials: !config["proxy-dev"]}).subscribe(
-      //isConnected => {
-        //if (isConnected.connected){
-          //this.isauth = isConnected.connected
-        //} else {
-          //this.isauth = false
-        //} }, error => {alert('Pas connecté')});
+    
   }
 
   
