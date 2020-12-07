@@ -1,7 +1,7 @@
 import { Injectable, Input } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import url  from './../config.json';
+import config  from './../config.json';
 
 export interface Email {
 	id: number
@@ -21,8 +21,7 @@ export class EmailService {
   constructor(private http: HttpClient) { }
   
   getAllEmails(): Observable<Email[]> {
-  return this.http.get<Email[]>('http://localhost:8070/api/emails',{withCredentials: true})
-  //return this.http.get<Email[]>('http://localhost:8070/api/emails')
+  return this.http.get<Email[]>(config.url + "api/emails",{withCredentials: !config["proxy-dev"]})
   }
 
 
