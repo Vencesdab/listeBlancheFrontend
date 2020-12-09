@@ -17,6 +17,7 @@
 							<clr-dg-cell>{{email.email_subject}}</clr-dg-cell>
 							<clr-dg-cell>{{email.email_sender}}</clr-dg-cell>
 							<clr-dg-cell>{{email.created_at}}</clr-dg-cell>
+							
 						</clr-dg-row>
 
 						<clr-dg-footer>{{emails.length}} emails</clr-dg-footer>
@@ -34,6 +35,18 @@
 			<!--</a>-->
 			</button>
 			<!--<app-single-mail [emails]="selectedEmail"></app-single-mail>-->
+			<button class="btn btn-outline" [disabled]="!selectedEmail" (click)="onRestore()" >
+					<span class="nav-text">Restore</span>
+			</button>
+			<button class="btn btn-outline" [disabled]="!selectedEmail" (click)="onDelete()" >
+					<span class="nav-text">Delete</span>
+			</button>
+			<button class="btn btn-outline" [disabled]="!selectedEmail" (click)="onWhiteList()" >
+					<span class="nav-text">Mettre cette personne sur liste blanche</span>
+			</button>
+			<button class="btn btn-outline" [disabled]="!selectedEmail" (click)="onBlackList()" >
+					<span class="nav-text">Mettre cette personne sur liste noire</span>
+			</button>
 	</div>
 
 		
