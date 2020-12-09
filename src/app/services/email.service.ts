@@ -26,23 +26,23 @@ export class EmailService {
 
 
   putInWhiteList(email: Email) {
-    const URI = config.url + "api/whitelist/"+email.id
-    return this.http.put(URI,{},{withCredentials: !config["proxy-dev"]})
+    const address = config.url + "api/whitelist/"+email.id
+    return this.http.put(address,{},{withCredentials: !config["proxy-dev"]})
   }
   
   putInBlackList(email: Email) {
-    const URI = config.url + "api/blacklist/"+email.id
-    return this.http.put(URI,{},{withCredentials: !config["proxy-dev"]})
+    const address = config.url + "api/blacklist/"+email.id
+    return this.http.put(address,{},{withCredentials: !config["proxy-dev"]})
   }
 
   delete(email: Email) {
-    const URI = config.url + "api/emails/"+email.id
-    return this.http.delete(URI,{withCredentials: !config["proxy-dev"]})
+    const address = config.url + "api/emails/"+email.id
+    return this.http.delete(address,{withCredentials: !config["proxy-dev"]})
   }
   
   restore(email: Email) {
-    const URI = config.url + "api/emails/restore/"+email.id
-    return this.http.put(URI,{},{withCredentials: !config["proxy-dev"]})
+    const address = config.url + "api/emails/restore/"+email.id
+    return this.http.put(address,{},{withCredentials: !config["proxy-dev"]})
   }
 
 }
