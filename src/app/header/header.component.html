@@ -1,18 +1,20 @@
 <div class="app">
-    <clr-header class="header-6 header">
-		<div class="branding"><h1><font color="#ffffff">{{title}} </font></h1></div>
+    <clr-header class="header-6">
+		<div class="branding"><h2><font color="#ffffff">{{title}} </font></h2></div>
 	
 		<div class="header-nav">
-			<a class="btn" (click)=goHome()>
-				<span class="nav-text">Home</span>
-			</a>
 			
-			<a class="btn" (click)=goMail()>
-				<span class="nav-text">Mails</span>
-			</a>
+				<button class="btn btn-inverse" (click)=goHome()>
+					<span class="nav-text">Home</span>
+				</button>
+			
+				<button class="btn btn-inverse" (click)=goMail()>
+					<span class="nav-text">Mails</span>
+				</button>
+			
 		</div>
 		<div class="header-actions">
-			<a class="btn" (click)=goProfil() >
+			<a class="btn btn-inverse" (click)=goProfil() >
 				<span class="nav-text">Profil</span>
 			</a>
 		</div>
