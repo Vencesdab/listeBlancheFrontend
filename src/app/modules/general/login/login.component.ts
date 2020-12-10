@@ -38,7 +38,7 @@ export class LoginComponent implements OnInit {
  
   //Quand on clique sur le bouton 'se connecter' :
   // - on regarde avec la bdd si le mdp et l'id sont valides
-  // - on actualise le baseComponeent en conséquence en fonction de la réponse grâce a la fonction connect()
+  // - on actualise le baseComponent en conséquence en fonction de la réponse grâce a la fonction connect()
   onSubmit(data) {
     this.checkoutForm.reset();
     this.loginService.login(data).subscribe(res => {

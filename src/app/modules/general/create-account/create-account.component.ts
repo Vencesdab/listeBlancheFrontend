@@ -32,7 +32,11 @@ export class CreateAccountComponent implements OnInit {
   }
 
   onSubmit(data): void{
-    this.userService.create(data)
-  }
+    this.userService.create(data).subscribe()
+    this.baseComponent.connect()
+    this.router.navigate([''])   
+    }
+
+
 
 }

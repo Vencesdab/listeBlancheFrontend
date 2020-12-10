@@ -33,14 +33,12 @@ export class LoginService implements OnInit{
   login(userdata) {
     const request = '{"email": "'+ userdata.email+'","password": "'+userdata.password+'"}';
     const headers = { 'content-type': 'application/json'}  
-    //return this.http.post<cookieSetter>(url + 'login', request, {'headers':headers});
     this.http.post<cookieSetter>(this.adresse, request, {'headers':headers, withCredentials: !config["proxy-dev"]}).subscribe(res => {this.isauth = res.setCookie});
     return this.http.post<cookieSetter>(this.adresse, request, {'headers':headers, withCredentials: !config["proxy-dev"]});
   }
 
   //Fonction qui permet de voir si l'utilisateur est connecté
   isConnected(){
-      //const headers = { 'content-type': 'application/json'} 
       this.http.get<IsConnected>(this.adresse2, {withCredentials: !config["proxy-dev"]}).subscribe(
         isConnected => {this.isauth =  isConnected.connected}, error => {alert('Pas connecté')});
       return this.isauth
