@@ -20,6 +20,7 @@ import { BaseComponentComponent } from './base-component/base-component.componen
 import { CreateAccountComponent } from './modules/general/create-account/create-account.component';
 import { CaptchaComponent } from './modules/general/captcha/captcha.component';
 import { RecaptchaModule, RecaptchaFormsModule } from 'ng-recaptcha';
+import { LogCreaComponent } from './log-crea/log-crea.component';
 
 
 @NgModule({
@@ -34,6 +35,7 @@ import { RecaptchaModule, RecaptchaFormsModule } from 'ng-recaptcha';
     BaseComponentComponent,
     CreateAccountComponent,
     CaptchaComponent,
+    LogCreaComponent,
 
   ],
   imports: [

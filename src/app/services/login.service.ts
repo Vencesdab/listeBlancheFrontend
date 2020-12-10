@@ -17,6 +17,7 @@ export class LoginService implements OnInit{
   adresse = config.url + 'login';
   adresse2 = config.url + 'api/connect';
   isauth:boolean;
+  haveAccount:boolean;
   response;
   
 
@@ -24,7 +25,7 @@ export class LoginService implements OnInit{
     }
 
   ngOnInit() : void {
-    
+    this.haveAccount = true
   }
 
   
@@ -44,5 +45,9 @@ export class LoginService implements OnInit{
         isConnected => {this.isauth =  isConnected.connected}, error => {alert('Pas connecté')});
       return this.isauth
       
+  }
+
+  signUp(){
+    this.haveAccount = false
   }
 }

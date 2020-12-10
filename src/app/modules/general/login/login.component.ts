@@ -6,6 +6,7 @@ import { HeaderComponent } from './../../../header/header.component';
 import { EmailService } from './../../../services/email.service';
 import { BaseComponentComponent } from './../../../base-component/base-component.component';
 import { Input } from '@angular/core';
+import { LogCreaComponent } from 'src/app/log-crea/log-crea.component';
 
 
 @Component({
@@ -21,7 +22,7 @@ export class LoginComponent implements OnInit {
   
   
 
-  constructor(private baseComponent:BaseComponentComponent, 
+  constructor(private lcComponent:LogCreaComponent,  private baseComponent:BaseComponentComponent, 
     private emailService:EmailService, private loginService: LoginService ,private formBuilder: FormBuilder,  private router: Router) {
     this.checkoutForm = this.formBuilder.group({
       email: '',
@@ -50,6 +51,8 @@ export class LoginComponent implements OnInit {
   }
 
   goSignUp(){
+    this.loginService.signUp()
+    this.lcComponent.connect()
     this.router.navigate(['create-account'])
   }
 
