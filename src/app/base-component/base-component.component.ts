@@ -11,15 +11,13 @@ import { LoginComponent } from '../modules/general/login/login.component';
 })
 
 export class BaseComponentComponent implements OnInit {
-  isauth:boolean //= this.loginService.isauth;
+  isauth:boolean 
   title = 'titre';
   
   
 
   constructor(private loginService:LoginService
     ) {
-    //this.isauth = this.loginService.isauth
-    
    }
 
   ngOnInit(): void {
