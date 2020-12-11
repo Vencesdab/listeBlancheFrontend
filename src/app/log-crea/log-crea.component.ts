@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { LoginService } from '../services/login.service';
+import { StorageService } from './../services/storage.service';
 
 @Component({
   selector: 'app-log-crea',
@@ -9,14 +9,14 @@ import { LoginService } from '../services/login.service';
 export class LogCreaComponent implements OnInit {
   haveAccount:boolean=true;
 
-  constructor(private loginService:LoginService) { }
+  constructor(private storageService: StorageService) { }
 
   ngOnInit(): void {
     //this.haveAccount = this.loginService.haveAccount
   }
 
   connect(){
-    this.haveAccount = this.loginService.haveAccount
+    this.haveAccount = this.storageService.retrieve('haveAccount')
   }
 
 

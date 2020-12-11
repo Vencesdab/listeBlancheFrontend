@@ -1,8 +1,5 @@
-import { Component, Input, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
-import { TimeoutError } from 'rxjs';
-import { LoginService } from '../services/login.service';
-import { LoginComponent } from '../modules/general/login/login.component';
+import { Component, OnInit } from '@angular/core';
+import { StorageService } from './../services/storage.service';
 
 @Component({
   selector: 'app-base-component',
@@ -16,12 +13,12 @@ export class BaseComponentComponent implements OnInit {
   
   
 
-  constructor(private loginService:LoginService
+  constructor(private storageService:StorageService
     ) {
    }
 
   ngOnInit(): void {
-    this.isauth = this.loginService.isauth
+    this.isauth = this.storageService.retrieve('isauth')
   }
 
   //Permet d'actualiser la donnée 'isauth' de baseComponent avec une action.
@@ -29,7 +26,7 @@ export class BaseComponentComponent implements OnInit {
   // - soit login (sans header), 
   // - soit home (avec header) 
   connect(){
-    this.isauth = this.loginService.isauth
+    this.isauth = this.storageService.retrieve('isauth')
   }
 
 }

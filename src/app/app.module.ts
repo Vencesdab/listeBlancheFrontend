@@ -21,6 +21,7 @@ import { CreateAccountComponent } from './modules/general/create-account/create-
 import { CaptchaComponent } from './modules/general/captcha/captcha.component';
 import { RecaptchaModule, RecaptchaFormsModule } from 'ng-recaptcha';
 import { LogCreaComponent } from './log-crea/log-crea.component';
+import { StorageService } from './services/storage.service';
 
 
 @NgModule({
@@ -39,7 +40,7 @@ import { LogCreaComponent } from './log-crea/log-crea.component';
 
   ],
   imports: [
-    BrowserModule,
+  BrowserModule,
     AppRoutingModule,
     ClarityModule,
     HttpClientModule,
@@ -48,7 +49,7 @@ import { LogCreaComponent } from './log-crea/log-crea.component';
     RecaptchaModule,
     RecaptchaFormsModule,
   ],
-  providers: [],
+  providers: [StorageService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

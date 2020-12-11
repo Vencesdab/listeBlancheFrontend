@@ -4,6 +4,7 @@ import { Router } from '@angular/router';
 import { BaseComponentComponent } from 'src/app/base-component/base-component.component';
 import { LoginService } from 'src/app/services/login.service';
 import { UserService } from 'src/app/services/user.service';
+import { LogCreaComponent } from './../../../log-crea/log-crea.component';
 
 @Component({
   selector: 'app-create-account',
@@ -18,12 +19,13 @@ export class CreateAccountComponent implements OnInit {
     private baseComponent:BaseComponentComponent,
     private userService: UserService ,
     private formBuilder: FormBuilder, 
-    private router: Router
+    private router: Router,
+    private logCreaComponent: LogCreaComponent
   ) {
     this.creationForm = this.formBuilder.group({
       email: '',
       email_password: '',
-      fullName: '',
+      full_name: '',
       password: ''
     });
   }
@@ -32,10 +34,15 @@ export class CreateAccountComponent implements OnInit {
   }
 
   onSubmit(data): void{
-    this.userService.create(data).subscribe()
-    this.baseComponent.connect()
-    this.router.navigate([''])   
-    }
+    this.userService.create(data).subscribe(
+      _status => {
+        this.baseComponent.connect()
+        this.logCreaComponent.connect()
+        this.router.navigate([''])  
+      },
+      _error => alert("création échouée")
+    )
+  }
 
 
 
