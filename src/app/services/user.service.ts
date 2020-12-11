@@ -14,7 +14,6 @@ constructor(private http: HttpClient) { }
 
 create(userdata) {
   const headers = { 'content-type': 'application/json'}  
-  //const URI = config.url + "register"
   return this.http.post(this.adresse, userdata, {'headers':headers, withCredentials: !config["proxy-dev"]});
   }
 

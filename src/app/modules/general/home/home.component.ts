@@ -4,12 +4,11 @@ import { Router } from '@angular/router';
 import { LoginService } from './../../../services/login.service';
 import { BaseComponentComponent } from './../../../base-component/base-component.component';
 import { ProfilService } from './../../../services/profil.service';
-import { StorageService } from './../../../services/storage.service';
+import { Storable, StorageService } from './../../../services/storage.service';
 
 
 interface Profil {
 	full_name : string
-	//mdp : string
 	email : string
 }
 
@@ -26,7 +25,7 @@ export class HomeComponent implements OnInit {
   email:string;
 
 
-  constructor(private baseComp:BaseComponentComponent, private profilService: ProfilService, private loginService:LoginService, private router: Router, private storageService: StorageService) { }
+  constructor(private baseComp:BaseComponentComponent, private profilService: ProfilService, private router: Router, private storageService: StorageService) { }
 
   ngOnInit(){
     this.profilService.getInfos().subscribe(data => {this.profil = data},
@@ -36,7 +35,7 @@ export class HomeComponent implements OnInit {
   }
 
   onGoToLogin(){
-    this.storageService.store('isauth',false)
+    this.storageService.store(Storable.isAuth,false)
     this.baseComp.connect()
     this.router.navigate(['base'])
     

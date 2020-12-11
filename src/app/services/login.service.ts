@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
-import { Injectable, Input, OnInit } from '@angular/core';
+import { Injectable, OnInit } from '@angular/core';
 import config  from './../config.json';
-import { StorageService } from './storage.service';
+import { Storable, StorageService } from './storage.service';
 
 export interface cookieSetter {
   setCookie: boolean
@@ -24,7 +24,7 @@ export class LoginService implements OnInit{
     }
 
   ngOnInit() : void {
-    this.storageService.store('haveAccount',true)
+    this.storageService.store(Storable.haveAccount,true)
   }
 
   
@@ -33,20 +33,20 @@ export class LoginService implements OnInit{
     const request = '{"email": "'+ userdata.email+'","password": "'+userdata.password+'"}';
     const headers = { 'content-type': 'application/json'}  
     this.http.post<cookieSetter>(this.adresse, request, {'headers':headers, withCredentials: !config["proxy-dev"]})
-      .subscribe(res => this.storageService.store('isauth',res.setCookie));
+      .subscribe(res => this.storageService.store(Storable.isAuth,res.setCookie));
     return this.http.post<cookieSetter>(this.adresse, request, {'headers':headers, withCredentials: !config["proxy-dev"]});
   }
 
   //Fonction qui permet de voir si l'utilisateur est connecté
   isConnected(): boolean{
       this.http.get<IsConnected>(this.adresse2, {withCredentials: !config["proxy-dev"]}).subscribe(
-        isConnected => this.storageService.store('isauth',isConnected.connected),
+        isConnected => this.storageService.store(Storable.isAuth,isConnected.connected),
         _error => alert('Pas connecté'));
-      return this.storageService.retrieve('isauth')
+      return this.storageService.retrieve(Storable.isAuth)
       
   }
 
   signUp(){
-    this.storageService.store('haveAccount',false)
+    this.storageService.store(Storable.haveAccount,false)
   }
 }

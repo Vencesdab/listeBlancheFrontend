@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { StorageService } from './../services/storage.service';
+import { Storable, StorageService } from './../services/storage.service';
 
 @Component({
   selector: 'app-base-component',
@@ -18,7 +18,7 @@ export class BaseComponentComponent implements OnInit {
    }
 
   ngOnInit(): void {
-    this.isauth = this.storageService.retrieve('isauth')
+    this.isauth = this.storageService.retrieve(Storable.isAuth)
   }
 
   //Permet d'actualiser la donnée 'isauth' de baseComponent avec une action.
@@ -26,7 +26,7 @@ export class BaseComponentComponent implements OnInit {
   // - soit login (sans header), 
   // - soit home (avec header) 
   connect(){
-    this.isauth = this.storageService.retrieve('isauth')
+    this.isauth = this.storageService.retrieve(Storable.isAuth)
   }
 
 }

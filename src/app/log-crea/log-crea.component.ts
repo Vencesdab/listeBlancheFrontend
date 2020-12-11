@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { StorageService } from './../services/storage.service';
+import { Storable, StorageService } from './../services/storage.service';
 
 @Component({
   selector: 'app-log-crea',
@@ -16,7 +16,7 @@ export class LogCreaComponent implements OnInit {
   }
 
   connect(){
-    this.haveAccount = this.storageService.retrieve('haveAccount')
+    this.haveAccount = this.storageService.retrieve(Storable.haveAccount)
   }
 
 
