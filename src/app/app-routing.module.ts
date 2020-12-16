@@ -10,6 +10,7 @@ import { CreateAccountComponent } from './modules/general/create-account/create-
 import { CaptchaComponent } from './modules/general/captcha/captcha.component';
 import { AppComponent } from './app.component';
 import { BaseComponentComponent } from './base-component/base-component.component';
+import { ListComponent } from './modules/general/list/list.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -20,7 +21,8 @@ const routes: Routes = [
   { path: 'login', component: LoginComponent },
   { path: 'create-account', component: CreateAccountComponent },
   { path: 'verify/:id', component: CaptchaComponent },
-  { path: 'base', component: BaseComponentComponent }
+  { path: 'base', component: BaseComponentComponent },
+  { path : 'list', component: ListComponent },
   ];
 
 @NgModule({

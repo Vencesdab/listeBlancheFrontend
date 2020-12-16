@@ -29,6 +29,10 @@ export class HeaderComponent implements OnInit {
     this.router.navigate(['mail'])
   }
 
+  goList(){
+    this.router.navigate(['list'])
+  }
+
   goProfil(){
     this.router.navigate(['profil'])
   }

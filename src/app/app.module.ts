@@ -22,7 +22,7 @@ import { CaptchaComponent } from './modules/general/captcha/captcha.component';
 import { RecaptchaModule, RecaptchaFormsModule } from 'ng-recaptcha';
 import { LogCreaComponent } from './log-crea/log-crea.component';
 import { StorageService } from './services/storage.service';
-
+import {ListComponent} from './modules/general/list/list.component';
 
 @NgModule({
   declarations: [
@@ -37,10 +37,10 @@ import { StorageService } from './services/storage.service';
     CreateAccountComponent,
     CaptchaComponent,
     LogCreaComponent,
-
+    ListComponent
   ],
   imports: [
-  BrowserModule,
+    BrowserModule,
     AppRoutingModule,
     ClarityModule,
     HttpClientModule,
