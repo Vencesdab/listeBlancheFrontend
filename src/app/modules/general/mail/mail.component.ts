@@ -55,7 +55,12 @@ export class MailComponent implements OnInit {
   }
 
   onWhiteList():void {
-    this.emailService.putInWhiteList(this.selectedEmail).subscribe(_result => location.reload(),_error => alert(this.messageServerError))
+    this.emailService.putInWhiteList(this.selectedEmail).subscribe(
+      _result => {
+        location.reload()
+      },
+      error => {if (error.status !== "304") alert(this.messageServerError)}
+    );
   }
 
   onBlackList():void {
