@@ -26,6 +26,7 @@ export class EmailService {
 
 
   putInWhiteList(email: Email) {
+    
     const address = config.url + "api/whitelist/"+email.id
     return this.http.put(address,{},{withCredentials: !config["proxy-dev"]})
   }

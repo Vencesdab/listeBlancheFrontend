@@ -48,7 +48,7 @@ export class LoginComponent implements OnInit {
         this.router.navigate(['']) 
         }
     },
-    _error => alert("Mauvaise adresse mail ou mot de passe !")
+    _error => alert("Incorrect login or password !")
     )
       
   }
