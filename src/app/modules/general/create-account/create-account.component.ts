@@ -45,9 +45,9 @@ export class CreateAccountComponent implements OnInit {
     )
   }
 
-  goToHelp(){
-    this.helpComp.connect()
-    this.router.navigate(['help'])
-  }
+  //goToHelp(){
+    //this.helpComp.connect()
+  //  this.router.navigate(['help'])
+  //}
 
 }
