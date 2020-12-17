@@ -39,7 +39,7 @@ export class CreateAccountComponent implements OnInit {
       _status => {
         this.baseComponent.connect()
         this.logCreaComponent.connect()
-        this.router.navigate([''])
+        this.router.navigate(['login'])
       },
       _error => alert("création échouée")
     )

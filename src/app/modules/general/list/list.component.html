@@ -1,6 +1,6 @@
 <clr-main-container>
     <clr-datagrid >
-        <clr-dg-column [clrDgField]="'whiteemailname'">Email</clr-dg-column>
+        <clr-dg-column [clrDgField]="'whiteemailname'">Liste blanche</clr-dg-column>
         <clr-dg-row *clrDgItems="let whiteemail of whitelist" [clrDgItem]="whiteemail">
             <clr-dg-cell>{{whiteemail}}</clr-dg-cell>
         </clr-dg-row>
@@ -16,7 +16,7 @@
         <button type="submit" class="btn btn-primary">Ajouter</button>
     </form>
     <clr-datagrid >
-        <clr-dg-column [clrDgField]="'blackemailname'">Email</clr-dg-column>
+        <clr-dg-column [clrDgField]="'blackemailname'">Liste noire</clr-dg-column>
         <clr-dg-row *clrDgItems="let blackemail of blacklist" [clrDgItem]="blackemail">
             <clr-dg-cell>{{blackemail}}</clr-dg-cell>
         </clr-dg-row>
