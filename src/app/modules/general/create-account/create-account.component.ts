@@ -22,7 +22,7 @@ export class CreateAccountComponent implements OnInit {
     private formBuilder: FormBuilder,
     private router: Router,
     private logCreaComponent: LogCreaComponent,
-    private helpComp: HelpComponent
+    //private helpComp: HelpComponent
   ) {
     this.creationForm = this.formBuilder.group({
       email: ['', Validators.required],
