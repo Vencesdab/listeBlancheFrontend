@@ -25,6 +25,7 @@
     "@webcomponents/custom-elements": "^1.0.0",
     "@webcomponents/webcomponentsjs": "^2.5.0",
     "ng-recaptcha": "^6.1.0",
+    "recaptcha": "^1.2.1",
     "rxjs": "~6.6.0",
     "tslib": "^2.0.0",
     "zone.js": "~0.10.2"

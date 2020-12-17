@@ -5,6 +5,7 @@ import { BaseComponentComponent } from 'src/app/base-component/base-component.co
 import { LoginService } from 'src/app/services/login.service';
 import { UserService } from 'src/app/services/user.service';
 import { LogCreaComponent } from './../../../log-crea/log-crea.component';
+import { HelpComponent } from 'src/app/modules/general/help/help.component';
 
 @Component({
   selector: 'app-create-account',
@@ -18,7 +19,7 @@ export class CreateAccountComponent implements OnInit {
   constructor(
     private baseComponent:BaseComponentComponent,
     private userService: UserService ,
-    private formBuilder: FormBuilder, 
+    private formBuilder: FormBuilder,
     private router: Router,
     private logCreaComponent: LogCreaComponent
   ) {
@@ -38,12 +39,15 @@ export class CreateAccountComponent implements OnInit {
       _status => {
         this.baseComponent.connect()
         this.logCreaComponent.connect()
-        this.router.navigate([''])  
+        this.router.navigate([''])
       },
       _error => alert("création échouée")
     )
   }
 
-
+  goToHelp(){
+    this.helpComp.connect()
+    this.router.navigate(['help'])
+  }
 
 }

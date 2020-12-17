@@ -23,6 +23,7 @@ import { RecaptchaModule, RecaptchaFormsModule } from 'ng-recaptcha';
 import { LogCreaComponent } from './log-crea/log-crea.component';
 import { StorageService } from './services/storage.service';
 import {ListComponent} from './modules/general/list/list.component';
+import { HelpComponent } from './modules/general/help/help.component';
 
 @NgModule({
   declarations: [
@@ -37,7 +38,8 @@ import {ListComponent} from './modules/general/list/list.component';
     CreateAccountComponent,
     CaptchaComponent,
     LogCreaComponent,
-    ListComponent
+    ListComponent,
+    HelpComponent
   ],
   imports: [
     BrowserModule,
