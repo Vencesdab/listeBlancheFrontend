@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, Validators } from '@angular/forms';
+import { FormBuilder } from '@angular/forms';
 import { Router } from '@angular/router';
 import { BaseComponentComponent } from 'src/app/base-component/base-component.component';
 import { LoginService } from 'src/app/services/login.service';
@@ -21,14 +21,13 @@ export class CreateAccountComponent implements OnInit {
     private userService: UserService ,
     private formBuilder: FormBuilder,
     private router: Router,
-    private logCreaComponent: LogCreaComponent,
-    //private helpComp: HelpComponent
+    private logCreaComponent: LogCreaComponent
   ) {
     this.creationForm = this.formBuilder.group({
-      email: ['', Validators.required],
-      email_password: ['', Validators.required],
-      full_name: ['', Validators.required],
-      password: ['', Validators.required]
+      email: '',
+      email_password: '',
+      full_name: '',
+      password: ''
     });
   }
 
@@ -40,15 +39,15 @@ export class CreateAccountComponent implements OnInit {
       _status => {
         this.baseComponent.connect()
         this.logCreaComponent.connect()
-        this.router.navigate(['login'])  
+        this.router.navigate([''])
       },
       _error => alert("création échouée")
     )
   }
 
-  goToHelp(){
+  //goToHelp(){
     //this.helpComp.connect()
-    this.router.navigate(['help'])
-  }
+  //  this.router.navigate(['help'])
+  //}
 
 }
