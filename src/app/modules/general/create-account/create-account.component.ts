@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder } from '@angular/forms';
+import { FormBuilder, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { BaseComponentComponent } from 'src/app/base-component/base-component.component';
 import { LoginService } from 'src/app/services/login.service';
@@ -24,10 +24,10 @@ export class CreateAccountComponent implements OnInit {
     private logCreaComponent: LogCreaComponent
   ) {
     this.creationForm = this.formBuilder.group({
-      email: '',
-      email_password: '',
-      full_name: '',
-      password: ''
+      email: ['', Validators.required],
+      email_password: ['', Validators.required],
+      full_name: ['', Validators.required],
+      password: ['', Validators.required]
     });
   }
 
