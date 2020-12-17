@@ -34,12 +34,18 @@ export class ListComponent implements OnInit {
 
   onWhiteListSubmit(data) {
     this.addInWhiteListForm.reset();
-    this.listService.postInWhiteList(data.whiteemailitem).subscribe();
+    this.listService.postInWhiteList(data.whiteemailitem).subscribe(
+      _result => location.reload(),
+      _error => alert("Erreur lors du changemement")
+    );
   }
 
   onBlackListSubmit(data) {
     this.addInBlackListForm.reset();
-    this.listService.postInBlackList(data.blackemailitem).subscribe();
+    this.listService.postInBlackList(data.blackemailitem).subscribe(
+      _result => location.reload(),
+      _error => alert("Erreur lors du changemement")
+    );
   }
 
 }
