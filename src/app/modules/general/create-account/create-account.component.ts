@@ -13,12 +13,11 @@ import { HelpComponent } from 'src/app/modules/general/help/help.component';
   styleUrls: ['./create-account.component.css']
 })
 export class CreateAccountComponent implements OnInit {
-
   creationForm;
 
   constructor(
-    private baseComponent:BaseComponentComponent,
-    private userService: UserService ,
+    private baseComponent: BaseComponentComponent,
+    private userService: UserService,
     private formBuilder: FormBuilder,
     private router: Router,
     private logCreaComponent: LogCreaComponent
@@ -31,23 +30,21 @@ export class CreateAccountComponent implements OnInit {
     });
   }
 
-  ngOnInit(): void {
-  }
+  ngOnInit(): void {}
 
-  onSubmit(data): void{
+  onSubmit(data): void {
     this.userService.create(data).subscribe(
       _status => {
-        this.baseComponent.connect()
-        this.logCreaComponent.connect()
-        this.router.navigate(['login'])
+        this.baseComponent.connect();
+        this.logCreaComponent.connect();
+        this.router.navigate(['login']);
       },
-      _error => alert("création échouée")
-    )
+      _error => alert('création échouée')
+    );
   }
 
   //goToHelp(){
-    //this.helpComp.connect()
+  //this.helpComp.connect()
   //  this.router.navigate(['help'])
   //}
-
 }

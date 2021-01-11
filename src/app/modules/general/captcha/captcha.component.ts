@@ -3,21 +3,23 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { CaptchaService } from '../../../services/captcha.service';
 
-
 @Component({
   selector: 'app-captcha',
   templateUrl: './captcha.component.html',
   styleUrls: ['./captcha.component.css']
 })
 export class CaptchaComponent implements OnInit {
-
   captchaForm: FormGroup;
   id: string;
   emptyEmail = false;
   emptyCaptcha = false;
 
-  constructor(private formBuilder: FormBuilder, private captchaService: CaptchaService, private route: ActivatedRoute,
-              private router: Router) {
+  constructor(
+    private formBuilder: FormBuilder,
+    private captchaService: CaptchaService,
+    private route: ActivatedRoute,
+    private router: Router
+  ) {
     this.captchaForm = formBuilder.group({
       email: '',
       captcha: ''
@@ -44,14 +46,17 @@ export class CaptchaComponent implements OnInit {
     this.emptyEmail = data.email === '';
     this.emptyCaptcha = data.captcha === '';
     if (!this.emptyEmail && !this.emptyCaptcha) {
-      this.captchaService.verifyEmail(data.email, data.captcha, this.id).subscribe(res => {
-        console.log(res);
-        console.log('ir a otra pagina');
-        this.router.navigate(['']);
-      }, error => {
-        this.captchaForm.reset();
-        console.log('error');
-      });
+      this.captchaService.verifyEmail(data.email, data.captcha, this.id).subscribe(
+        res => {
+          console.log(res);
+          console.log('ir a otra pagina');
+          this.router.navigate(['']);
+        },
+        error => {
+          this.captchaForm.reset();
+          console.log('error');
+        }
+      );
     }
   }
 }

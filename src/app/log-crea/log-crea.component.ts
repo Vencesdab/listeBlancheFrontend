@@ -7,17 +7,15 @@ import { Storable, StorageService } from './../services/storage.service';
   styleUrls: ['./log-crea.component.css']
 })
 export class LogCreaComponent implements OnInit {
-  haveAccount:boolean=true;
+  haveAccount: boolean = true;
 
-  constructor(private storageService: StorageService) { }
+  constructor(private storageService: StorageService) {}
 
   ngOnInit(): void {
     //this.haveAccount = this.loginService.haveAccount
   }
 
-  connect(){
-    this.haveAccount = this.storageService.retrieve(Storable.haveAccount)
+  connect() {
+    this.haveAccount = this.storageService.retrieve(Storable.haveAccount);
   }
-
-
 }

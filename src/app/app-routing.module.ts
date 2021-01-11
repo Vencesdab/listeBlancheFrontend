@@ -23,12 +23,12 @@ const routes: Routes = [
   { path: 'create-account', component: CreateAccountComponent },
   { path: 'verify/:id', component: CaptchaComponent },
   { path: 'base', component: BaseComponentComponent },
-  { path : 'list', component: ListComponent },
-  { path : 'help', component: HelpComponent },
-  ];
+  { path: 'list', component: ListComponent },
+  { path: 'help', component: HelpComponent }
+];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}

@@ -8,7 +8,6 @@ import { ListService } from '../../../services/list.service';
   styleUrls: ['./list.component.scss']
 })
 export class ListComponent implements OnInit {
-
   addInWhiteListForm;
   addInBlackListForm;
   whitelist: string[] = [];
@@ -16,7 +15,7 @@ export class ListComponent implements OnInit {
   whiteemail: string;
   blackemail: string;
 
-  constructor(private listService: ListService,private formBuilder: FormBuilder) {
+  constructor(private listService: ListService, private formBuilder: FormBuilder) {
     this.addInWhiteListForm = this.formBuilder.group({
       whiteemailitem: ''
     });
@@ -26,17 +25,23 @@ export class ListComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.listService.getFromWhiteList().subscribe(whitedata => {
-      this.whitelist = whitedata
-      this.listService.getFromBlackList().subscribe(blackdata => this.blacklist = blackdata, _error => this.blacklist = [])
-    }, _error => this.whitelist = [])
+    this.listService.getFromWhiteList().subscribe(
+      whitedata => {
+        this.whitelist = whitedata;
+        this.listService.getFromBlackList().subscribe(
+          blackdata => (this.blacklist = blackdata),
+          _error => (this.blacklist = [])
+        );
+      },
+      _error => (this.whitelist = [])
+    );
   }
 
   onWhiteListSubmit(data) {
     this.addInWhiteListForm.reset();
     this.listService.postInWhiteList(data.whiteemailitem).subscribe(
       _result => location.reload(),
-      _error => alert("Erreur lors du changemement")
+      _error => alert('Erreur lors du changemement')
     );
   }
 
@@ -44,8 +49,7 @@ export class ListComponent implements OnInit {
     this.addInBlackListForm.reset();
     this.listService.postInBlackList(data.blackemailitem).subscribe(
       _result => location.reload(),
-      _error => alert("Erreur lors du changemement")
+      _error => alert('Erreur lors du changemement')
     );
   }
-
 }

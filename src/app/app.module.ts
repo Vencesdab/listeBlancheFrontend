@@ -3,7 +3,6 @@ import { NgModule } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { HttpClientModule } from '@angular/common/http';
 
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
@@ -22,7 +21,7 @@ import { CaptchaComponent } from './modules/general/captcha/captcha.component';
 import { RecaptchaModule, RecaptchaFormsModule } from 'ng-recaptcha';
 import { LogCreaComponent } from './log-crea/log-crea.component';
 import { StorageService } from './services/storage.service';
-import {ListComponent} from './modules/general/list/list.component';
+import { ListComponent } from './modules/general/list/list.component';
 import { HelpComponent } from './modules/general/help/help.component';
 
 @NgModule({
@@ -49,9 +48,9 @@ import { HelpComponent } from './modules/general/help/help.component';
     FormsModule,
     ReactiveFormsModule,
     RecaptchaModule,
-    RecaptchaFormsModule,
+    RecaptchaFormsModule
   ],
   providers: [StorageService],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {}

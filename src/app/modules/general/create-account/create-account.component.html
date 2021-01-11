@@ -1,46 +1,51 @@
 <clr-main-container>
-	<div class="create-account-wrapper">
-    				<form class="login" [formGroup]="creationForm" (ngSubmit)="onSubmit(creationForm.value)">
-        				<section class="title">
-            				<h3 class="welcome">Subscribe to</h3>
-            				Projet : spam en moins
+  <div class="create-account-wrapper">
+    <form class="login" [formGroup]="creationForm" (ngSubmit)="onSubmit(creationForm.value)">
+      <section class="title">
+        <h3 class="welcome">Subscribe to</h3>
+        Projet : spam en moins
+      </section>
+      <div class="create-account-group">
+        <clr-input-container>
+          <label for="email" class="clr-sr-only">Adresse email</label>
+          <input id="email" type="text" clrInput placeholder="Email" formControlName="email" />
+        </clr-input-container>
+        <clr-password-container>
+          <label for="email" class="clr-sr-only">Mot de passe de cette adresse</label>
+          <input
+            id="email"
+            type="text"
+            clrPassword
+            placeholder="EmailPassword"
+            formControlName="email_password"
+          />
+        </clr-password-container>
+        <clr-input-container>
+          <label for="email" class="clr-sr-only">Nom d'utilisateur ListeBlanche</label>
+          <input
+            id="email"
+            type="text"
+            clrInput
+            placeholder="Fullname"
+            formControlName="full_name"
+          />
+        </clr-input-container>
+        <clr-password-container>
+          <label for="password" class="clr-sr-only">Mot de passe ListeBlanche</label>
+          <input
+            id="password"
+            type="password"
+            clrPassword
+            placeholder="Password"
+            formControlName="password"
+          />
+        </clr-password-container>
 
-        				</section>
-        			<div class="create-account-group">
-
-            			<clr-input-container>
-                			<label for="email" class="clr-sr-only">Adresse email</label>
-							<input id="email" type="text" clrInput placeholder="Email" formControlName="email"/>
-            			</clr-input-container>
-						      <clr-password-container>
-                			<label for="email" class="clr-sr-only">Mot de passe de cette adresse</label>
-                			<input id="email" type="text" clrPassword placeholder="EmailPassword" formControlName="email_password"/>
-            			</clr-password-container>
-                  <clr-input-container>
-                			<label for="email" class="clr-sr-only">Nom d'utilisateur ListeBlanche</label>
-                			<input id="email" type="text" clrInput placeholder="Fullname" formControlName="full_name"/>
-            			</clr-input-container>
-            			<clr-password-container>
-                			<label for="password" class="clr-sr-only">Mot de passe ListeBlanche</label>
-                			<input id="password" type="password" clrPassword placeholder="Password" formControlName="password"/>
-            			</clr-password-container>
-
-						<button type="submit" class="btn btn-primary">S'inscrire</button>
-						<a href="login" class="signup">Déjà un compte ? Connectez vous !</a><br>
-
-
-            			
-
-					</div>
-
-
-					</form>
-
-	</div>
-	<div><app-help></app-help></div>
-
-
-
+        <button type="submit" class="btn btn-primary">S'inscrire</button>
+        <a href="login" class="signup">Déjà un compte ? Connectez vous !</a>
+        <br />
+      </div>
+    </form>
+  </div>
+  <div><app-help></app-help></div>
 </clr-main-container>
-
-

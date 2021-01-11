@@ -12,31 +12,26 @@ import { Router } from '@angular/router';
 })
 export class HeaderComponent implements OnInit {
   title = 'Projet liste ';
-  
 
-  constructor(private router: Router 
-    ) { }
+  constructor(private router: Router) {}
 
   ngOnInit(): void {
     //this.router.navigate(['home'])
   }
 
-  goHome(){
-    this.router.navigate(['home'])
+  goHome() {
+    this.router.navigate(['home']);
   }
 
-  goMail(){
-    this.router.navigate(['mail'])
+  goMail() {
+    this.router.navigate(['mail']);
   }
 
-  goList(){
-    this.router.navigate(['list'])
+  goList() {
+    this.router.navigate(['list']);
   }
 
-  goProfil(){
-    this.router.navigate(['profil'])
+  goProfil() {
+    this.router.navigate(['profil']);
   }
-
-  
-
 }

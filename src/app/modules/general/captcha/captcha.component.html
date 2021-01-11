@@ -1,15 +1,28 @@
 <clr-main-container>
   <div class="app">
     <form class="clr-form" [formGroup]="captchaForm" (ngSubmit)="onSubmit(captchaForm.value)">
-
       <div class="clr-control-container">
-        <div [className]="emptyEmail ? 'clr-input-wrapper clr-error' : 'clr-input-wrapper'" style="margin-bottom: 30px">
-          <input type="text" id="email" placeholder="Email address" class="clr-input" formControlName="email"/>
+        <div
+          [className]="emptyEmail ? 'clr-input-wrapper clr-error' : 'clr-input-wrapper'"
+          style="margin-bottom: 30px"
+        >
+          <input
+            type="text"
+            id="email"
+            placeholder="Email address"
+            class="clr-input"
+            formControlName="email"
+          />
           <clr-icon class="clr-validate-icon" shape="exclamation-circle"></clr-icon>
-          <clr-control-error *ngIf='emptyEmail' class="clr-error" >The email has to be completed.</clr-control-error>
+          <clr-control-error *ngIf="emptyEmail" class="clr-error">
+            The email has to be completed.
+          </clr-control-error>
         </div>
 
-        <div [className]="emptyCaptcha ? 'clr-input-wrapper clr-error' : 'clr-input-wrapper'" style="margin-top: 30px">
+        <div
+          [className]="emptyCaptcha ? 'clr-input-wrapper clr-error' : 'clr-input-wrapper'"
+          style="margin-top: 30px"
+        >
           <re-captcha
             id="captcha"
             formControlName="captcha"
@@ -17,7 +30,9 @@
             siteKey="6LfnofYZAAAAAFzwSymBxz8V-lmfGrJW0_j00_qW"
           ></re-captcha>
 
-          <clr-control-error *ngIf='emptyCaptcha' class="clr-error">The captcha has to be solved.</clr-control-error>
+          <clr-control-error *ngIf="emptyCaptcha" class="clr-error">
+            The captcha has to be solved.
+          </clr-control-error>
         </div>
       </div>
       <div>

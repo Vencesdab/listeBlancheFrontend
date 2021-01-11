@@ -1,4 +1,4 @@
 {
-    "url" : "http://localhost:8070/",
-    "proxy-dev": false
+  "url": "http://localhost:8070/",
+  "proxy-dev": false
 }
