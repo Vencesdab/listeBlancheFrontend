@@ -1,59 +1,75 @@
 <clr-main-container>
-	<div class="app">
-		
-		
-		<p>nom : {{profil?.full_name}}</p>
+  <div class="app">
+    <p>nom : {{ profil?.full_name }}</p>
 
-		<form class="profil-name-form"  [formGroup]="nameForm" (ngSubmit)="onSubmitName(nameForm.value)" >
-			<section>
-				Choisissez un nouveau nom
-			</section>
-			<clr-input-container>
-				<label for="nameitem" class="clr-sr-only">Nom</label>
-				<input id="nameitem" type="text" clrInput placeholder="Name" formControlName="nameitem"/>
-			</clr-input-container>
-			<button type="submit" class="btn btn-primary">Modifier</button>
-		</form>
+    <form class="profil-name-form" [formGroup]="nameForm" (ngSubmit)="onSubmitName(nameForm.value)">
+      <section>Choisissez un nouveau nom</section>
+      <clr-input-container>
+        <label for="nameitem" class="clr-sr-only">Nom</label>
+        <input id="nameitem" type="text" clrInput placeholder="Name" formControlName="nameitem" />
+      </clr-input-container>
+      <button type="submit" class="btn btn-primary">Modifier</button>
+    </form>
 
-		<form class="profil-password-form"  [formGroup]="passwordForm" (ngSubmit)="onSubmitPassword(passwordForm.value)" >
-			<section>
-				Choisissez un nouveau mot de passe
-			</section>
-			<clr-input-container>
-				<label for="passworditem" class="clr-sr-only">Mot de passe</label>
-				<input id="passworditem" type="text" clrInput placeholder="Password" formControlName="passworditem"/>
-			</clr-input-container>
-			<button type="submit" class="btn btn-primary">Modifier</button>
-		</form>
+    <form
+      class="profil-password-form"
+      [formGroup]="passwordForm"
+      (ngSubmit)="onSubmitPassword(passwordForm.value)"
+    >
+      <section>Choisissez un nouveau mot de passe</section>
+      <clr-input-container>
+        <label for="passworditem" class="clr-sr-only">Mot de passe</label>
+        <input
+          id="passworditem"
+          type="text"
+          clrInput
+          placeholder="Password"
+          formControlName="passworditem"
+        />
+      </clr-input-container>
+      <button type="submit" class="btn btn-primary">Modifier</button>
+    </form>
 
-		<p>mail : {{profil?.email}}</p>
-		
-		<form class="profil-email-form"  [formGroup]="emailForm" (ngSubmit)="onSubmitEmail(emailForm.value)" >
-			<section>
-				Changez d'adresse email
-			</section>
-			<clr-input-container>
-				<label for="emailitem" class="clr-sr-only">Adresse mail</label>
-				<input id="emailitem" type="text" clrInput placeholder="Email" formControlName="emailitem"/>
-			</clr-input-container>
-			<button type="submit" class="btn btn-primary">Modifier</button>
-		</form>
+    <p>mail : {{ profil?.email }}</p>
 
-		<form class="profil-password-email-form"  [formGroup]="emailPasswordForm" (ngSubmit)="onSubmitEmailPassword(emailPasswordForm.value)" >
-			<section>
-				Entrez le nouveau mot de passe de votre adresse mail
-			</section>
-			<clr-input-container>
-				<label for="emailpassworditem" class="clr-sr-only">Mot de passe lié à cette adresse email</label>
-				<input id="emailpassworditem" type="text" clrInput placeholder="PasswordEmail" formControlName="emailpassworditem"/>
-			</clr-input-container>
-			<button type="submit" class="btn btn-primary">Modifier</button>
-		</form>
+    <form
+      class="profil-email-form"
+      [formGroup]="emailForm"
+      (ngSubmit)="onSubmitEmail(emailForm.value)"
+    >
+      <section>Changez d'adresse email</section>
+      <clr-input-container>
+        <label for="emailitem" class="clr-sr-only">Adresse mail</label>
+        <input
+          id="emailitem"
+          type="text"
+          clrInput
+          placeholder="Email"
+          formControlName="emailitem"
+        />
+      </clr-input-container>
+      <button type="submit" class="btn btn-primary">Modifier</button>
+    </form>
 
-	</div>
-	
+    <form
+      class="profil-password-email-form"
+      [formGroup]="emailPasswordForm"
+      (ngSubmit)="onSubmitEmailPassword(emailPasswordForm.value)"
+    >
+      <section>Entrez le nouveau mot de passe de votre adresse mail</section>
+      <clr-input-container>
+        <label for="emailpassworditem" class="clr-sr-only">
+          Mot de passe lié à cette adresse email
+        </label>
+        <input
+          id="emailpassworditem"
+          type="text"
+          clrInput
+          placeholder="PasswordEmail"
+          formControlName="emailpassworditem"
+        />
+      </clr-input-container>
+      <button type="submit" class="btn btn-primary">Modifier</button>
+    </form>
+  </div>
 </clr-main-container>
-
-
-
-

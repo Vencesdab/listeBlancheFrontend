@@ -1,12 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 import { ProfilService } from './../../../services/profil.service';
-import {Router} from '@angular/router';
+import { Router } from '@angular/router';
 import { FormBuilder } from '@angular/forms';
 
 interface Profil {
-	full_name : string
-	//mdp : string
-	email : string
+  full_name: string;
+  //mdp : string
+  email: string;
 }
 
 @Component({
@@ -15,13 +15,17 @@ interface Profil {
   styleUrls: ['./profil.component.css']
 })
 export class ProfilComponent implements OnInit {
-  profil:Profil;
+  profil: Profil;
   nameForm;
   emailForm;
   passwordForm;
   emailPasswordForm;
 
-  constructor(private profilService: ProfilService, private router: Router, private formBuilder: FormBuilder) {
+  constructor(
+    private profilService: ProfilService,
+    private router: Router,
+    private formBuilder: FormBuilder
+  ) {
     this.nameForm = this.formBuilder.group({
       nameitem: ''
     });
@@ -36,36 +40,42 @@ export class ProfilComponent implements OnInit {
     });
   }
 
-  ngOnInit(){this.profilService.getInfos().subscribe(data => {this.profil = data},
-     error => {this.profil = {full_name:'None', email:'None'}});
+  ngOnInit() {
+    this.profilService.getInfos().subscribe(
+      data => {
+        this.profil = data;
+      },
+      error => {
+        this.profil = { full_name: 'None', email: 'None' };
+      }
+    );
   }
 
   onSubmitName(data) {
     this.profilService.putName(data.nameitem).subscribe(
       _result => location.reload(),
-      _error => alert("Erreur du serveur.")
-    )
+      _error => alert('Erreur du serveur.')
+    );
   }
 
   onSubmitEmail(data) {
     this.profilService.putEmail(data.emailitem).subscribe(
       _result => location.reload(),
-      _error => alert("Erreur du serveur.")
-    )
+      _error => alert('Erreur du serveur.')
+    );
   }
 
   onSubmitPassword(data) {
     this.profilService.putPassword(data.passworditem).subscribe(
       _result => location.reload(),
-      _error => alert("Erreur du serveur.")
-    )
+      _error => alert('Erreur du serveur.')
+    );
   }
 
   onSubmitEmailPassword(data) {
     this.profilService.putEmailPassword(data.emailpassworditem).subscribe(
       _result => location.reload(),
-      _error => alert("Erreur du serveur.")
-    )
+      _error => alert('Erreur du serveur.')
+    );
   }
-
 }

@@ -1,34 +1,50 @@
 <clr-main-container>
-    <clr-datagrid >
-        <clr-dg-column [clrDgField]="'whiteemailname'">Liste blanche</clr-dg-column>
-        <clr-dg-row *clrDgItems="let whiteemail of whitelist" [clrDgItem]="whiteemail">
-            <clr-dg-cell>{{whiteemail}}</clr-dg-cell>
-        </clr-dg-row>
-    </clr-datagrid>
-    <form class="whiteemailform" [formGroup]="addInWhiteListForm" (ngSubmit)="onWhiteListSubmit(addInWhiteListForm.value)">
-        <section>
-            Ajoutez les adresses dessous
-        </section>
-        <clr-input-container>
-            <label for="whiteemailitem" class="clr-sr-only">Adresse</label>
-            <input id="whiteemailitem" type="text" clrInput placeholder="Email" formControlName="whiteemailitem"/>
-        </clr-input-container>
-        <button type="submit" class="btn btn-primary">Ajouter</button>
-    </form>
-    <clr-datagrid >
-        <clr-dg-column [clrDgField]="'blackemailname'">Liste noire</clr-dg-column>
-        <clr-dg-row *clrDgItems="let blackemail of blacklist" [clrDgItem]="blackemail">
-            <clr-dg-cell>{{blackemail}}</clr-dg-cell>
-        </clr-dg-row>
-    </clr-datagrid>
-    <form class="blackemailform" [formGroup]="addInBlackListForm" (ngSubmit)="onBlackListSubmit(addInBlackListForm.value)">
-        <section>
-            Ajoutez les adresses dessous
-        </section>
-        <clr-input-container>
-            <label for="blackemailitem" class="clr-sr-only">Adresse</label>
-            <input id="blackemailitem" type="text" clrInput placeholder="Email" formControlName="blackemailitem"/>
-        </clr-input-container>
-        <button type="submit" class="btn btn-primary">Ajouter</button>
-    </form>
+  <clr-datagrid>
+    <clr-dg-column [clrDgField]="'whiteemailname'">Liste blanche</clr-dg-column>
+    <clr-dg-row *clrDgItems="let whiteemail of whitelist" [clrDgItem]="whiteemail">
+      <clr-dg-cell>{{ whiteemail }}</clr-dg-cell>
+    </clr-dg-row>
+  </clr-datagrid>
+  <form
+    class="whiteemailform"
+    [formGroup]="addInWhiteListForm"
+    (ngSubmit)="onWhiteListSubmit(addInWhiteListForm.value)"
+  >
+    <section>Ajoutez les adresses dessous</section>
+    <clr-input-container>
+      <label for="whiteemailitem" class="clr-sr-only">Adresse</label>
+      <input
+        id="whiteemailitem"
+        type="text"
+        clrInput
+        placeholder="Email"
+        formControlName="whiteemailitem"
+      />
+    </clr-input-container>
+    <button type="submit" class="btn btn-primary">Ajouter</button>
+  </form>
+  <clr-datagrid>
+    <clr-dg-column [clrDgField]="'blackemailname'">Liste noire</clr-dg-column>
+    <clr-dg-row *clrDgItems="let blackemail of blacklist" [clrDgItem]="blackemail">
+      <clr-dg-cell>{{ blackemail }}</clr-dg-cell>
+    </clr-dg-row>
+  </clr-datagrid>
+  <form
+    class="blackemailform"
+    [formGroup]="addInBlackListForm"
+    (ngSubmit)="onBlackListSubmit(addInBlackListForm.value)"
+  >
+    <section>Ajoutez les adresses dessous</section>
+    <clr-input-container>
+      <label for="blackemailitem" class="clr-sr-only">Adresse</label>
+      <input
+        id="blackemailitem"
+        type="text"
+        clrInput
+        placeholder="Email"
+        formControlName="blackemailitem"
+      />
+    </clr-input-container>
+    <button type="submit" class="btn btn-primary">Ajouter</button>
+  </form>
 </clr-main-container>

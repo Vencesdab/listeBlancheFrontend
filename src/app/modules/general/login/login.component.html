@@ -1,35 +1,29 @@
 <clr-main-container>
-	<div class="login-wrapper">
-    				<form class="login" [formGroup]="checkoutForm" (ngSubmit)="onSubmit(checkoutForm.value)">
-        				<section class="title">
-            				<h3 class="welcome">Welcome to</h3>
-            				Projet : spam en moins	
-            				
-        				</section>
-        			<div class="login-group">
-            			
-            			<clr-input-container>
-                			<label for="email" class="clr-sr-only">Email address</label>
-                			<input id="email" type="text" clrInput placeholder="Email" formControlName="email"/>
-            			</clr-input-container>
-            			<clr-password-container>
-                			<label for="password" class="clr-sr-only">Password</label>
-                			<input id="password" type="password" clrPassword placeholder="Password" formControlName="password"/>
-            			</clr-password-container>
-            			
-            			
-						<button type="submit" class="btn btn-primary">Se connecter</button>
-						<a (click)=goSignUp() class="signup">Pas de compte ? Inscrivez-vous !</a>
-            
-		</div>
-		
-	</form>
-	
-</div>
+  <div class="login-wrapper">
+    <form class="login" [formGroup]="checkoutForm" (ngSubmit)="onSubmit(checkoutForm.value)">
+      <section class="title">
+        <h3 class="welcome">Welcome to</h3>
+        Projet : spam en moins
+      </section>
+      <div class="login-group">
+        <clr-input-container>
+          <label for="email" class="clr-sr-only">Email address</label>
+          <input id="email" type="text" clrInput placeholder="Email" formControlName="email" />
+        </clr-input-container>
+        <clr-password-container>
+          <label for="password" class="clr-sr-only">Password</label>
+          <input
+            id="password"
+            type="password"
+            clrPassword
+            placeholder="Password"
+            formControlName="password"
+          />
+        </clr-password-container>
 
-		
-	
+        <button type="submit" class="btn btn-primary">Se connecter</button>
+        <a (click)="goSignUp()" class="signup">Pas de compte ? Inscrivez-vous !</a>
+      </div>
+    </form>
+  </div>
 </clr-main-container>
-
-
-

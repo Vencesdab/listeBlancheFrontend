@@ -6,27 +6,21 @@ import { Storable, StorageService } from './../services/storage.service';
   templateUrl: './base-component.component.html',
   styleUrls: ['./base-component.component.css']
 })
-
 export class BaseComponentComponent implements OnInit {
-  isauth:boolean 
+  isauth: boolean;
   title = 'titre';
-  
-  
 
-  constructor(private storageService:StorageService
-    ) {
-   }
+  constructor(private storageService: StorageService) {}
 
   ngOnInit(): void {
-    this.isauth = this.storageService.retrieve(Storable.isAuth)
+    this.isauth = this.storageService.retrieve(Storable.isAuth);
   }
 
   //Permet d'actualiser la donnée 'isauth' de baseComponent avec une action.
-  //Comme ça, dès qu'on revient au BaseComponent, il sait quelle page afficher : 
-  // - soit login (sans header), 
-  // - soit home (avec header) 
-  connect(){
-    this.isauth = this.storageService.retrieve(Storable.isAuth)
+  //Comme ça, dès qu'on revient au BaseComponent, il sait quelle page afficher :
+  // - soit login (sans header),
+  // - soit home (avec header)
+  connect() {
+    this.isauth = this.storageService.retrieve(Storable.isAuth);
   }
-
 }
