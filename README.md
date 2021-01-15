@@ -25,3 +25,14 @@ Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protrac
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+
+
+## Running with Docker
+
+Build the container:
+
+`sudo docker build -t project_frontend .`
+
+Run the container
+
+`sudo docker run -it --init --env PORT=5000 -p 4200:5000 project_frontend`
