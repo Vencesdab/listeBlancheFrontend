@@ -6,10 +6,12 @@ import config from '../config.json';
   providedIn: 'root'
 })
 export class ListService {
+  base_url: string = `${config.url}auth/list/`;
+
   constructor(private http: HttpClient) {}
 
   postInWhiteList(email: string) {
-    const address = config.url + 'api/whitelist';
+    const address = `${this.base_url}whitelist`;
     return this.http.post(
       address,
       { expression: email },
@@ -18,7 +20,7 @@ export class ListService {
   }
 
   postInBlackList(email: string) {
-    const address = config.url + 'api/blacklist';
+    const address = `${this.base_url}blacklist`;
     return this.http.post(
       address,
       { expression: email },
@@ -27,12 +29,12 @@ export class ListService {
   }
 
   getFromWhiteList() {
-    const address = config.url + 'api/whitelist';
+    const address = `${this.base_url}whitelist`;
     return this.http.get<string[]>(address, { withCredentials: !config['proxy-dev'] });
   }
 
   getFromBlackList() {
-    const address = config.url + 'api/blacklist';
+    const address = `${this.base_url}blacklist`;
     return this.http.get<string[]>(address, { withCredentials: !config['proxy-dev'] });
   }
 }

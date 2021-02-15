@@ -1,16 +1,16 @@
-import { TestBed } from '@angular/core/testing';
+/* tslint:disable:no-unused-variable */
 
+import { TestBed, async, inject } from '@angular/core/testing';
 import { HistoryService } from './history.service';
 
-describe('HistoryService', () => {
-  let service: HistoryService;
-
+describe('Service: History', () => {
   beforeEach(() => {
-    TestBed.configureTestingModule({});
-    service = TestBed.inject(HistoryService);
+    TestBed.configureTestingModule({
+      providers: [HistoryService]
+    });
   });
 
-  it('should be created', () => {
+  it('should ...', inject([HistoryService], (service: HistoryService) => {
     expect(service).toBeTruthy();
-  });
+  }));
 });

@@ -1,28 +1,25 @@
-import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Observable } from 'rxjs';
+import { Injectable } from '@angular/core';
 import config from './../config.json';
+import { Observable } from 'rxjs';
 
-
-
-export interface HistEmail {
-  id: number;
-  fk_user: number;
+export interface History {
   email_sender: string;
   email_subject: string;
   reason: string;
+  created_at: string;
 }
+
 @Injectable({
   providedIn: 'root'
 })
 export class HistoryService {
-  email: HistEmail;
-  emails: HistEmail[];
+  history: History[];
 
   constructor(private http: HttpClient) {}
 
-  getHistoryEmails(): Observable<HistEmail[]> {
-    return this.http.get<HistEmail[]>(config.url + 'api/emails', {
+  getAllHistory(): Observable<History[]> {
+    return this.http.get<History[]>(`${config.url}auth/history`, {
       withCredentials: !config['proxy-dev']
     });
   }
