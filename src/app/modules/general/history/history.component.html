@@ -1,0 +1,38 @@
+<clr-main-container>
+    <div class="app">
+        <div>Voici un historique de tous les mails :</div>
+      <clr-datagrid [(clrDgSingleSelected)]="selectedEmail">
+        <clr-dg-column [clrDgField]="'email_subject'">email subject</clr-dg-column>
+        <clr-dg-column [clrDgField]="'email_sender'">email sender</clr-dg-column>
+        <clr-dg-column [clrDgField]="'reason'">reason</clr-dg-column>
+        
+  
+        <clr-dg-row *clrDgItems="let email of emails" [clrDgItem]="email">
+          <clr-dg-cell>{{ email.email_subject }}</clr-dg-cell>
+          <clr-dg-cell>{{ email.email_sender }}</clr-dg-cell>
+          <clr-dg-cell>{{ email.reason }}</clr-dg-cell>
+        </clr-dg-row>
+  
+        <clr-dg-footer>{{ emails.length }} emails</clr-dg-footer>
+      </clr-datagrid>
+      Selected email:
+      <span class="emailsubject" *ngIf="selectedEmail">{{ selectedEmail.email_subject }}</span>
+    </div>
+    <!--<div>
+      <!--<app-single-mail [emails]="selectedEmail"></app-single-mail>-- >
+      <button class="btn btn-outline" [disabled]="!selectedEmail" (click)="onRestore()">
+        <span class="nav-text">Restore</span>
+      </button>
+      <button class="btn btn-outline" [disabled]="!selectedEmail" (click)="onDelete()">
+        <span class="nav-text">Delete</span>
+      </button>
+      <button class="btn btn-outline" [disabled]="!selectedEmail" (click)="onWhiteList()">
+        <span class="nav-text">Mettre cette personne sur liste blanche</span>
+      </button>
+      <button class="btn btn-outline" [disabled]="!selectedEmail" (click)="onBlackList()">
+        <span class="nav-text">Mettre cette personne sur liste noire</span>
+      </button>
+    </div>-->
+  </clr-main-container>
+
+  <!-- Composant historique, il récupère et affiche les mails tous les mails avec ce qui a été fait et la raison.-->

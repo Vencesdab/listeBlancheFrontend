@@ -1,2 +1,5 @@
 <div *ngIf="haveAccount"><app-login></app-login></div>
 <div *ngIf="!haveAccount"><app-create-account></app-create-account></div>
+
+<!--Composant en dessous de BaseComponent qui redirige l'utilisateur selon s'il veut se créer un compte ou se connecter. 
+    Cela dépend du paramètre haveAccount.-->

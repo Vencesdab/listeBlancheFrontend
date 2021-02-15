@@ -23,6 +23,8 @@ import { LogCreaComponent } from './log-crea/log-crea.component';
 import { StorageService } from './services/storage.service';
 import { ListComponent } from './modules/general/list/list.component';
 import { HelpComponent } from './modules/general/help/help.component';
+import { HistoryComponent } from './modules/general/history/history.component';
+import { ForgotPassComponent } from './modules/general/forgot-pass/forgot-pass.component';
 
 @NgModule({
   declarations: [
@@ -38,7 +40,9 @@ import { HelpComponent } from './modules/general/help/help.component';
     CaptchaComponent,
     LogCreaComponent,
     ListComponent,
-    HelpComponent
+    HelpComponent,
+    HistoryComponent,
+    ForgotPassComponent
   ],
   imports: [
     BrowserModule,

@@ -1,5 +1,6 @@
 <clr-main-container>
   <div class="app">
+    <div>Voici la liste des mails en quarantaine :</div>
     <clr-datagrid [(clrDgSingleSelected)]="selectedEmail">
       <clr-dg-column [clrDgField]="'email_subject'">email subject</clr-dg-column>
       <clr-dg-column [clrDgField]="'email_sender'">email sender</clr-dg-column>
@@ -32,3 +33,8 @@
     </button>
   </div>
 </clr-main-container>
+
+<!--Composant principal qui affiche les mails en quarantaine, c'est à dire ceux qui attendent une action de l'utilisateur 
+    ou qui seront supprimés après une période de temps.
+    C'est ici que l'utilisateur choisit ce qu'il veut faire : le transférer sur sa boite mail, le supprimer, 
+    mettre l'expéditeur sur liste blanche ou  sur liste noire-->
