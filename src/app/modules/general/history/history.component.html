@@ -5,6 +5,7 @@
         <clr-dg-column [clrDgField]="'email_subject'">email subject</clr-dg-column>
         <clr-dg-column [clrDgField]="'email_sender'">email sender</clr-dg-column>
         <clr-dg-column [clrDgField]="'reason'">reason</clr-dg-column>
+        <clr-dg-column [clrDgField]="'created_at'">date</clr-dg-column>
         
   
         <clr-dg-row *clrDgItems="let email of emails" [clrDgItem]="email">
@@ -16,7 +17,7 @@
         <clr-dg-footer>{{ emails.length }} emails</clr-dg-footer>
       </clr-datagrid>
       Selected email:
-      <span class="emailsubject" *ngIf="selectedEmail">{{ selectedEmail.email_subject }}</span>
+    <span class="emailsubject" *ngIf="selectedEmail">{{ selectedEmail.email_subject }}</span>
     </div>
     <!--<div>
       <!--<app-single-mail [emails]="selectedEmail"></app-single-mail>-- >

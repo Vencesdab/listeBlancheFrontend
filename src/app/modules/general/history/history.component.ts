@@ -4,12 +4,11 @@ import { Router } from '@angular/router';
 import { SingleMailComponent } from '../single-mail/single-mail.component';
 import { HeaderComponent } from './../../../header/header.component';
 
-export interface HistEmail {
-  id: number;
-  fk_user: number;
+export interface History {
   email_sender: string;
   email_subject: string;
   reason: string;
+  created_at: string;
 }
 
 @Component({
@@ -18,10 +17,10 @@ export interface HistEmail {
   styleUrls: ['./history.component.css']
 })
 export class HistoryComponent implements OnInit {
-  emails = [];
-  selectedEmail: HistEmail;
+  
+  selectedEmail: History;
   isSelected = true;
-  email: HistEmail;
+  emails: History[];
 
   messageServerError =
     'Erreur lors du traitement de la requête par le serveur. Veuillez nous excuser pour la gêne occasionnée.';
@@ -30,8 +29,8 @@ export class HistoryComponent implements OnInit {
     //super(router);
   }
 
-  ngOnInit() {
-    this.historyService.getHistoryEmails().subscribe(
+  /**ngOnInit() {
+    this.historyService.getAllHistory().subscribe(
       data => {
         this.emails = data;
       },
@@ -39,6 +38,12 @@ export class HistoryComponent implements OnInit {
         this.emails = [];
       }
     );
-  }
+  }**/
 
+  ngOnInit(){this.emails = [
+    {email_sender:"a@or.fr", email_subject:"test", reason:"black_list", created_at:"10"},
+    {email_sender:"a@or.fr", email_subject:"test2", reason:"white_list", created_at:"11"}
+    ];
+
+  }
 }
