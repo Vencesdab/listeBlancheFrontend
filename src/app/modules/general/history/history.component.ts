@@ -29,7 +29,7 @@ export class HistoryComponent implements OnInit {
     //super(router);
   }
 
-  /**ngOnInit() {
+  ngOnInit() {
     this.historyService.getAllHistory().subscribe(
       data => {
         this.emails = data;
@@ -38,12 +38,12 @@ export class HistoryComponent implements OnInit {
         this.emails = [];
       }
     );
-  }**/
+  }
 
-  ngOnInit(){this.emails = [
+  /**ngOnInit(){this.emails = [
     {email_sender:"a@or.fr", email_subject:"test", reason:"black_list", created_at:"10"},
     {email_sender:"a@or.fr", email_subject:"test2", reason:"white_list", created_at:"11"}
     ];
 
-  }
+  }**/
 }
