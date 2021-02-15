@@ -6,9 +6,9 @@ import { HeaderComponent } from './../../../header/header.component';
 
 export interface Email {
   id: number;
-  fk_user: number;
   email_sender: string;
   email_subject: string;
+  email_size: number;
   created_at: string;
 }
 

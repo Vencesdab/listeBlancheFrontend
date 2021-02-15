@@ -7,7 +7,7 @@ import { Storable, StorageService } from './storage.service';
   providedIn: 'root'
 })
 export class UserService {
-  adresse = config.url + 'register';
+  adresse = `${config.url}lr/register`;
 
   constructor(private http: HttpClient, private storageService: StorageService) {}
 
