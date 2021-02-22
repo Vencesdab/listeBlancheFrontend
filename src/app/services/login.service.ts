@@ -15,9 +15,9 @@ interface IsConnected {
   providedIn: 'root'
 })
 export class LoginService implements OnInit {
-  adresse = config.url + 'login';
-  adresse2 = config.url + 'api/connect';
-  response;
+  adresse: string = `${config.url}lr/login`;
+  adresse2: string = `${config.url}lr/auth/connect`;
+  response: any;
 
   constructor(private http: HttpClient, private storageService: StorageService) {}
 
@@ -27,7 +27,7 @@ export class LoginService implements OnInit {
 
   //Fonction activée avec le bouton qui authentifie l'utilisateur avec la bdd
   login(userdata) {
-    const request = '{"email": "' + userdata.email + '","password": "' + userdata.password + '"}';
+    const request = `{"email": "${userdata.email}","password": "${userdata.password}"}`;
     const headers = { 'content-type': 'application/json' };
     this.http
       .post<cookieSetter>(this.adresse, request, {

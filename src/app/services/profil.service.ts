@@ -5,7 +5,6 @@ import config from './../config.json';
 
 export interface Profil {
   full_name: string;
-  //mdp : string
   email: string;
 }
 
@@ -13,26 +12,26 @@ export interface Profil {
   providedIn: 'root'
 })
 export class ProfilService {
+  base_url: string = `${config.url}auth/user/`;
+
   constructor(private http: HttpClient) {}
 
   getInfos(): Observable<Profil> {
-    return this.http.get<Profil>(config.url + 'api/user', {
-      withCredentials: !config['proxy-dev']
-    });
+    return this.http.get<Profil>(this.base_url, { withCredentials: !config['proxy-dev'] });
   }
 
   putName(name: string) {
-    const address = config.url + 'api/user/full_name';
+    const address = `${this.base_url}full_name`;
     return this.http.put(address, { full_name: name }, { withCredentials: !config['proxy-dev'] });
   }
 
   putEmail(email: string) {
-    const address = config.url + 'api/user/email';
+    const address = `${this.base_url}email`;
     return this.http.put(address, { email: email }, { withCredentials: !config['proxy-dev'] });
   }
 
   putPassword(password: string) {
-    const address = config.url + 'api/user/password';
+    const address = `${this.base_url}password`;
     return this.http.put(
       address,
       { password: password },
@@ -41,7 +40,7 @@ export class ProfilService {
   }
 
   putEmailPassword(password: string) {
-    const address = config.url + 'api/user/email_password';
+    const address = `${this.base_url}email_password`;
     return this.http.put(
       address,
       { email_password: password },

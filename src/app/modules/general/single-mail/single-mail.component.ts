@@ -1,13 +1,12 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { EmailService } from './../../../services/email.service';
-import { MailComponent } from '../mail/mail.component';
 
 export interface Email {
   id: number;
-  fk_user: number;
   email_sender: string;
   email_subject: string;
+  email_size: number;
   created_at: string;
 }
 

@@ -12,6 +12,7 @@ import { AppComponent } from './app.component';
 import { BaseComponentComponent } from './base-component/base-component.component';
 import { ListComponent } from './modules/general/list/list.component';
 import { HelpComponent } from './modules/general/help/help.component';
+import { HistoryComponent } from './modules/general/history/history.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -24,7 +25,8 @@ const routes: Routes = [
   { path: 'verify/:id', component: CaptchaComponent },
   { path: 'base', component: BaseComponentComponent },
   { path: 'list', component: ListComponent },
-  { path: 'help', component: HelpComponent }
+  { path: 'help', component: HelpComponent },
+  { path: 'history', component: HistoryComponent}
 ];
 
 @NgModule({

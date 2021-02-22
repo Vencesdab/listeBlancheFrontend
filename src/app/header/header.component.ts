@@ -34,4 +34,8 @@ export class HeaderComponent implements OnInit {
   goProfil() {
     this.router.navigate(['profil']);
   }
+
+  goHistory(){
+    this.router.navigate(['history']);
+  }
 }
