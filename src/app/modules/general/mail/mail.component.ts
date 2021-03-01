@@ -85,15 +85,4 @@ export class MailComponent implements OnInit {
     );
   }
 
-  /**select(){
-    if (this.selectedEmail != []){
-      this.isSelected = true;
-    }
-  }
-
-  selectionChanged(){
-    if (this.selectedEmail != null){
-      this.isSelected = true;
-    }
-  }**/
 }

@@ -1,5 +1,5 @@
 <clr-main-container>
-  <clr-datagrid>
+  <clr-datagrid [(clrDgSingleSelected)]="selectedWhite">
     <clr-dg-column [clrDgField]="'whiteemailname'">Liste blanche</clr-dg-column>
     <clr-dg-row *clrDgItems="let whiteemail of whitelist" [clrDgItem]="whiteemail">
       <clr-dg-cell>{{ whiteemail }}</clr-dg-cell>
@@ -23,7 +23,12 @@
     </clr-input-container>
     <button type="submit" class="btn btn-primary">Ajouter</button>
   </form>
-  <clr-datagrid>
+  <div>
+    <button class="btn btn-primary" [disabled]="!selectedWhite" (click)="onDeleteWhite()">
+      <span class="nav-text">Delete</span>
+    </button>
+  </div>
+  <clr-datagrid [(clrDgSingleSelected)]="selectedBlack">
     <clr-dg-column [clrDgField]="'blackemailname'">Liste noire</clr-dg-column>
     <clr-dg-row *clrDgItems="let blackemail of blacklist" [clrDgItem]="blackemail">
       <clr-dg-cell>{{ blackemail }}</clr-dg-cell>
@@ -47,6 +52,12 @@
     </clr-input-container>
     <button type="submit" class="btn btn-primary">Ajouter</button>
   </form>
+  <div>
+    <button class="btn btn-primary" [disabled]="!selectedBlack" (click)="onDeleteBlack()">
+      <span class="nav-text">Delete</span>
+    </button>
+  </div>
+  
 </clr-main-container>
 
 <!--Composant qui regroupe les informations sur les listes blanches et noires. 

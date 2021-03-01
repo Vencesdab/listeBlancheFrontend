@@ -14,6 +14,11 @@ export class ListComponent implements OnInit {
   blacklist: string[] = [];
   whiteemail: string;
   blackemail: string;
+  selectedWhite : String;
+  selectedBlack : String;
+
+  messageServerError =
+    'Erreur lors du traitement de la requête par le serveur. Veuillez nous excuser pour la gêne occasionnée.';
 
   constructor(private listService: ListService, private formBuilder: FormBuilder) {
     this.addInWhiteListForm = this.formBuilder.group({
@@ -50,6 +55,22 @@ export class ListComponent implements OnInit {
     this.listService.postInBlackList(data.blackemailitem).subscribe(
       _result => location.reload(),
       _error => alert('Erreur lors du changemement')
+    );
+  }
+
+  onDeleteWhite(): void {
+    this.addInWhiteListForm.reset();
+    this.listService.deleteWhite(this.selectedWhite).subscribe(
+      _result => location.reload(),
+      _error => alert(this.messageServerError)
+    );
+  }
+
+  onDeleteBlack(): void {
+    this.addInBlackListForm.reset();
+    this.listService.deleteBlack(this.selectedBlack).subscribe(
+      _result => location.reload(),
+      _error => alert(this.messageServerError)
     );
   }
 }

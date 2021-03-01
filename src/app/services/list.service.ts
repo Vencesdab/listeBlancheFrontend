@@ -37,4 +37,16 @@ export class ListService {
     const address = `${this.base_url}blacklist`;
     return this.http.get<string[]>(address, { withCredentials: !config['proxy-dev'] });
   }
+
+  deleteWhite(email:String){
+    const address = '${this.base_url}delete';
+    //const body = "{'expression':" + expression +'}'
+    return this.http.post(address, { expression: email }, { withCredentials: !config['proxy-dev'] });
+  }
+
+  deleteBlack(email:String){
+    const address = `${this.base_url}delete`;
+    //const body = "{'expression':" + expression +'}'
+    return this.http.post(address, { expression: email }, { withCredentials: !config['proxy-dev'] });
+  }
 }
