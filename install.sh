@@ -32,7 +32,7 @@ sudo env BASE_PATH=$BASE_PATH docker-compose build
 
 
 # We deploy the containers
-sudo env BASE_PATH=$BASE_PATH docker stack deploy -c docker-compose.yml <desire prefix name. Example : project>
+sudo env BASE_PATH=$BASE_PATH docker stack deploy -c docker-compose.yml project
 
 # We verify the services
 sudo docker service ls
@@ -46,6 +46,10 @@ pip install -r requirements.txt
 
 # Create a .env file with the environment variables
 cp ../environment/back_env ./.env
+
+
+# TODO : modification fichier .env
+
 nano .env
 
 # Replace mariadb-service:3306 with localhost:3307
