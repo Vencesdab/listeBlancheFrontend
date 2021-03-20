@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { CaptchaService } from '../services/captcha.service';
 import { Storable, StorageService } from './../services/storage.service';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-base-component',

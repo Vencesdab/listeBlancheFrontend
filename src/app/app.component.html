@@ -8,7 +8,10 @@
 <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
 
 <clr-main-container>
-  <app-base-component></app-base-component>
+	
+	<div *ngIf='captcha'><app-captcha></app-captcha></div>
+    <div *ngIf='!captcha'><app-base-component></app-base-component></div>
+	
 </clr-main-container>
 <!--
 <clr-main-container>

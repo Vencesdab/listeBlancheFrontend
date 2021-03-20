@@ -6,10 +6,20 @@ import config from '../config.json';
   providedIn: 'root'
 })
 export class CaptchaService {
-  constructor(private http: HttpClient) {}
+  captcha:boolean = false
+
+  constructor(private http: HttpClient) { }
 
   verifyEmail(email: string, captchaToken: string, id: string) {
     const data = { email, captchaToken };
     return this.http.put(`${config.url}verify/${id}`, data);
+  }
+
+  getCaptcha(){
+    return this.captcha
+  }
+
+  setCaptcha(){
+    this.captcha = true
   }
 }
