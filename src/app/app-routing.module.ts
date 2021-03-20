@@ -14,14 +14,14 @@ import { ListComponent } from './modules/general/list/list.component';
 import { HelpComponent } from './modules/general/help/help.component';
 
 const routes: Routes = [
-  { path: '', component: HomeComponent },
+  { path: '', component: AppComponent },
   { path: 'home', component: HomeComponent },
   { path: 'profil', component: ProfilComponent },
   { path: 'mail', component: MailComponent },
   { path: 'single-mail', component: SingleMailComponent },
   { path: 'login', component: LoginComponent },
   { path: 'create-account', component: CreateAccountComponent },
-  { path: 'verify/:id', component: CaptchaComponent },
+  { path: 'verify/:id', component: AppComponent },
   { path: 'base', component: BaseComponentComponent },
   { path : 'list', component: ListComponent },
   { path : 'help', component: HelpComponent },

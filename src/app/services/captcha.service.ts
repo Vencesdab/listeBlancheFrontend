@@ -8,11 +8,20 @@ import {Email} from './email.service';
   providedIn: 'root'
 })
 export class CaptchaService {
+  captcha:boolean = false
 
   constructor(private http: HttpClient) { }
 
   verifyEmail(email: string, captchaToken: string, id: string) {
     const data = {email, captchaToken};
     return this.http.put(config.url + `api/verify/${id}`, data);
+  }
+
+  getCaptcha(){
+    return this.captcha
+  }
+
+  setCaptcha(){
+    this.captcha = true
   }
 }
