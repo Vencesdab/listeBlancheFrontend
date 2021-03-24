@@ -38,7 +38,7 @@ export class EmailService {
   }
 
   delete(email: Email) {
-    const address = this.base_url + email.id;
+    const address = `${this.base_url}${email.id}`;
     return this.http.delete(address, { withCredentials: !config['proxy-dev'] });
   }
 

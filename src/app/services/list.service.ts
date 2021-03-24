@@ -39,7 +39,7 @@ export class ListService {
   }
 
   deleteWhite(email:String){
-    const address = '${this.base_url}delete';
+    const address = `${this.base_url}delete`;
     //const body = "{'expression':" + expression +'}'
     return this.http.post(address, { expression: email }, { withCredentials: !config['proxy-dev'] });
   }

@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, Router } from '@angular/router';
+import { ActivatedRoute } from '@angular/router';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { CaptchaService } from '../../../services/captcha.service';
 import { environment } from '../../../../environments/environment';
@@ -20,7 +20,6 @@ export class CaptchaComponent implements OnInit {
     private formBuilder: FormBuilder,
     private captchaService: CaptchaService,
     private route: ActivatedRoute,
-    private router: Router
   ) {
     this.captchaForm = formBuilder.group({
       email: '',
@@ -54,9 +53,7 @@ export class CaptchaComponent implements OnInit {
     if (!this.emptyEmail && !this.emptyCaptcha) {
       this.captchaService.verifyEmail(data.email, data.captcha, this.id).subscribe(
         res => {
-          console.log(res);
-          console.log('ir a otra pagina');
-          this.router.navigate(['']);
+          location.assign('/home');
         },
         error => {
           this.captchaForm.reset();
